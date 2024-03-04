@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="Project structure og source, target, release uppært í 21 í POM">
+      <change afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/flightBooking.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,20 +42,31 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "database",
+    "last_opened_file_path": "C:/Program Files/jdk-21.0.2/lib",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.44252872",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="JavaFX" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="is.hi.hbv401g.Framendi.Main" />
+      <module name="HBV401" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +75,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1708524485026</updated>
-      <workItem from="1708524736634" duration="996000" />
+      <workItem from="1708524736634" duration="3199000" />
+      <workItem from="1708531493378" duration="2581000" />
+      <workItem from="1709570651174" duration="1348000" />
     </task>
     <task id="LOCAL-00001" summary="Project structure og source, target, release uppært í 21 í POM">
       <option name="closed" value="true" />
