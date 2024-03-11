@@ -7,11 +7,24 @@ public class Flight {
     private String departureCity;
     private String arrivalCity;
     private Date departureTime;
+    private Date arrivalTime;
     private int price;
 
     private int availableSeats;
     private int reservedSeats;
     private Seat[] seats;
+
+    public Flight(String finalId, String departureCity, String arrivalCity, Date departureTime, Date arrivalTime, int price, int availableSeats, int reservedSeats, Seat[] seats) {
+        this.finalId = finalId;
+        this.departureCity = departureCity;
+        this.arrivalCity = arrivalCity;
+        this.departureTime = departureTime;
+        this.arrivalTime = arrivalTime;
+        this.price = price;
+        this.availableSeats = availableSeats;
+        this.reservedSeats = reservedSeats;
+        this.seats = seats;
+    }
 
     public Seat[] getSeats() {
         return seats;
@@ -51,7 +64,13 @@ public class Flight {
     public void setDepartureTime(Date departureTime) {
         this.departureTime = departureTime;
     }
+    public Date getArrivalTime() {
+        return arrivalTime;
+    }
 
+    public void setArrivalTime(Date arrivalTime) {
+        this.arrivalTime = arrivalTime;
+    }
     public int getPrice() {
         return price;
     }

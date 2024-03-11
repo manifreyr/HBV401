@@ -6,6 +6,13 @@ public class Booking {
     private String bookingID;
     private Seat[] seats;
 
+    public Booking(User user, Flight[] flights, String bookingID, Seat[] seats) {
+        this.user = user;
+        this.flights = flights;
+        this.bookingID = bookingID;
+        this.seats = seats;
+    }
+
     public User getUser() {
         return user;
     }

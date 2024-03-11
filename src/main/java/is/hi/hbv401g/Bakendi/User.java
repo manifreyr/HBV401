@@ -6,6 +6,13 @@ public class User {
     private int carbonEmission;
     private String userID;
     private String userName;
+    public User(Flight[] flights, Booking[] bookings, int carbonEmission, String userID, String userName) {
+        this.flights = flights;
+        this.bookings = bookings;
+        this.carbonEmission = carbonEmission;
+        this.userID = userID;
+        this.userName = userName;
+    }
 
     public Booking[] getBookings() {
         return bookings;

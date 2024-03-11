@@ -5,6 +5,12 @@ public class Seat {
     private String flightID;
     private boolean isReserved;
 
+    public Seat(String seatID, String flightID, boolean isReserved) {
+        this.seatID = seatID;
+        this.flightID = flightID;
+        this.isReserved = isReserved;
+    }
+
     public String getSeatID() {
         return seatID;
     }
@@ -27,5 +33,12 @@ public class Seat {
 
     public void setReserved(boolean reserved) {
         isReserved = reserved;
+    }
+
+    public void reserveSeat(Seat seat) {
+        seat.setReserved(true);
+    }
+    public void freeSeat(Seat seat){
+        seat.setReserved(false);
     }
 }
