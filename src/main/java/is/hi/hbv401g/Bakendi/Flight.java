@@ -3,7 +3,7 @@ package is.hi.hbv401g.Bakendi;
 import java.util.Date;
 
 public class Flight {
-    private String finalId;
+    private String flightId;
     private String departureCity;
     private String arrivalCity;
     private Date departureTime;
@@ -14,8 +14,8 @@ public class Flight {
     private int reservedSeats;
     private Seat[] seats;
 
-    public Flight(String finalId, String departureCity, String arrivalCity, Date departureTime, Date arrivalTime, int price, int availableSeats, int reservedSeats, Seat[] seats) {
-        this.finalId = finalId;
+    public Flight(String flightId, String departureCity, String arrivalCity, Date departureTime, Date arrivalTime, int price, int availableSeats, int reservedSeats, Seat[] seats) {
+        this.flightId = flightId;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
         this.departureTime = departureTime;
@@ -33,12 +33,12 @@ public class Flight {
     public void setSeats(Seat[] seats) {
         this.seats = seats;
     }
-    public String getFinalId() {
-        return finalId;
+    public String getFlightId() {
+        return flightId;
     }
 
-    public void setFinalId(String finalId) {
-        this.finalId = finalId;
+    public void setFlightId(String flightId) {
+        this.flightId = flightId;
     }
 
     public String getDepartureCity() {
