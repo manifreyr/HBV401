@@ -1,15 +1,13 @@
 package is.hi.hbv401g.Bakendi;
 
 public class User {
-    private Flight[] flights;
     private Booking[] bookings;
-    private int carbonEmission;
     private String userID;
     private String userName;
-    public User(Flight[] flights, Booking[] bookings, int carbonEmission, String userID, String userName) {
-        this.flights = flights;
+    private String userEmail;
+    public User(Booking[] bookings, String userEmail, String userID, String userName) {
         this.bookings = bookings;
-        this.carbonEmission = carbonEmission;
+        this.userEmail = userEmail;
         this.userID = userID;
         this.userName = userName;
     }
@@ -37,19 +35,11 @@ public class User {
         this.userID = userID;
     }
 
-    public Flight[] getFlights() {
-        return flights;
+    public String getUserEmail() {
+        return userEmail;
     }
 
-    public void setFlights(Flight[] flights) {
-        this.flights = flights;
-    }
-
-    public int getCarbonEmission() {
-        return carbonEmission;
-    }
-
-    public void setCarbonEmission(int carbonEmission) {
-        this.carbonEmission = carbonEmission;
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 }
