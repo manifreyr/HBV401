@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/flightBooking.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/flightBooking.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +55,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.44252872",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "database.data.views",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
