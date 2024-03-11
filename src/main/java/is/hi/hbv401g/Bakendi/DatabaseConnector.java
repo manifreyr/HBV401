@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DatabaseConnector {
+    private static final String url = "jdbc:sqlite:src/main/resources/flightBooking.db";
     public static Connection connect(){
-        String url = "jdbc:sqlite:src/main/resources/flightBooking.db";
         Connection connection = null;
         try {
             connection = java.sql.DriverManager.getConnection(url);
