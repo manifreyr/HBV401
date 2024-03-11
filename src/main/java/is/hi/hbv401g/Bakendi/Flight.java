@@ -1,6 +1,6 @@
 package is.hi.hbv401g.Bakendi;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Flight {
     private String flightNumber;
