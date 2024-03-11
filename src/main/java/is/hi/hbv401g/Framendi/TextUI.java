@@ -10,12 +10,9 @@ public class TextUI {
     private void run() {
         System.out.println("Book a flight: ");
         System.out.println("Available departure cities: ");
-        //Flight flight = new Flight(getUserInput());
+        //getUserInput()
 
 
     }
 
-    private String getUserInput() {
-        return null;
-    }
 }
