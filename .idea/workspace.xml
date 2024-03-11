@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="Breytingar á db og repo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/Flight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/FlightRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/FlightRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/flightBooking.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/flightBooking.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +55,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.44252872",
-    "settings.editor.selected.configurable": "database.data.views",
+    "settings.editor.selected.configurable": "database.query.execution",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {

@@ -3,10 +3,10 @@ package is.hi.hbv401g.Bakendi;
 import java.util.Date;
 
 public class Flight {
-    private String flightId;
+    private String flightNumber;
     private String departureCity;
     private String arrivalCity;
-    private Date departureTime;
+    private Date day;
     private Date arrivalTime;
     private int price;
 
@@ -14,16 +14,12 @@ public class Flight {
     private int reservedSeats;
     private Seat[] seats;
 
-    public Flight(String flightId, String departureCity, String arrivalCity, Date departureTime, Date arrivalTime, int price, int availableSeats, int reservedSeats, Seat[] seats) {
-        this.flightId = flightId;
+    public Flight(String flightNumber, String departureCity, String arrivalCity, Date day, int price) {
+        this.flightNumber = flightNumber;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
-        this.departureTime = departureTime;
-        this.arrivalTime = arrivalTime;
+        this.day = day;
         this.price = price;
-        this.availableSeats = availableSeats;
-        this.reservedSeats = reservedSeats;
-        this.seats = seats;
     }
 
     public Seat[] getSeats() {
@@ -33,12 +29,12 @@ public class Flight {
     public void setSeats(Seat[] seats) {
         this.seats = seats;
     }
-    public String getFlightId() {
-        return flightId;
+    public String getFlightNumber() {
+        return flightNumber;
     }
 
-    public void setFlightId(String flightId) {
-        this.flightId = flightId;
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
     }
 
     public String getDepartureCity() {
@@ -57,12 +53,12 @@ public class Flight {
         this.arrivalCity = arrivalCity;
     }
 
-    public Date getDepartureTime() {
-        return departureTime;
+    public Date getDay() {
+        return day;
     }
 
-    public void setDepartureTime(Date departureTime) {
-        this.departureTime = departureTime;
+    public void setDay(Date day) {
+        this.day = day;
     }
     public Date getArrivalTime() {
         return arrivalTime;
