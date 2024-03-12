@@ -1,12 +1,14 @@
 package is.hi.hbv401g.Bakendi;
 
+import java.util.List;
+
 public class Booking {
     private User user;
     private Flight[] flights;
     private String bookingID;
-    private Seat[] seats;
+    private List<Seat> seats;
 
-    public Booking(User user, Flight[] flights, String bookingID, Seat[] seats) {
+    public Booking(User user, Flight[] flights, String bookingID, List<Seat> seats) {
         this.user = user;
         this.flights = flights;
         this.bookingID = bookingID;
@@ -37,11 +39,11 @@ public class Booking {
         this.bookingID = bookingID;
     }
 
-    public Seat[] getSeats() {
+    public List<Seat> getSeats() {
         return seats;
     }
 
-    public void setSeats(Seat[] seats) {
+    public void setSeats(List<Seat> seats) {
         this.seats = seats;
     }
 
