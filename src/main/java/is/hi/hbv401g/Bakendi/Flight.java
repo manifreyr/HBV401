@@ -1,29 +1,28 @@
 package is.hi.hbv401g.Bakendi;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDate;
 
 public class Flight {
-    private String flightId;
+    private String flightNumber;
     private String departureCity;
     private String arrivalCity;
-    private Date departureTime;
-    private Date arrivalTime;
+    private LocalDate day;
     private int price;
-
+    private int flightDuration;
+    private final LocalDateTime departureTime = LocalDateTime.now();
     private int availableSeats;
     private int reservedSeats;
     private Seat[] seats;
 
-    public Flight(String flightId, String departureCity, String arrivalCity, Date departureTime, Date arrivalTime, int price, int availableSeats, int reservedSeats, Seat[] seats) {
-        this.flightId = flightId;
+    public Flight(String flightNumber, String departureCity, String arrivalCity, LocalDate day, int price, int flightDuration) {
+        this.flightNumber = flightNumber;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
-        this.departureTime = departureTime;
-        this.arrivalTime = arrivalTime;
+        this.day = day;
         this.price = price;
-        this.availableSeats = availableSeats;
-        this.reservedSeats = reservedSeats;
-        this.seats = seats;
+        this.flightDuration = flightDuration;
     }
 
     public Seat[] getSeats() {
@@ -33,12 +32,12 @@ public class Flight {
     public void setSeats(Seat[] seats) {
         this.seats = seats;
     }
-    public String getFlightId() {
-        return flightId;
+    public String getFlightNumber() {
+        return flightNumber;
     }
 
-    public void setFlightId(String flightId) {
-        this.flightId = flightId;
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
     }
 
     public String getDepartureCity() {
@@ -57,20 +56,14 @@ public class Flight {
         this.arrivalCity = arrivalCity;
     }
 
-    public Date getDepartureTime() {
-        return departureTime;
+    public LocalDate getDay() {
+        return day;
     }
 
-    public void setDepartureTime(Date departureTime) {
-        this.departureTime = departureTime;
-    }
-    public Date getArrivalTime() {
-        return arrivalTime;
+    public void setDay(LocalDate day) {
+        this.day = day;
     }
 
-    public void setArrivalTime(Date arrivalTime) {
-        this.arrivalTime = arrivalTime;
-    }
     public int getPrice() {
         return price;
     }
