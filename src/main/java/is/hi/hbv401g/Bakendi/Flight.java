@@ -10,6 +10,9 @@ public class Flight {
     private String arrivalCity;
     private LocalDate day;
     private int price;
+
+
+
     private int flightDuration;
     private final LocalDateTime departureTime = LocalDateTime.now();
     private int availableSeats;
@@ -22,6 +25,14 @@ public class Flight {
         this.arrivalCity = arrivalCity;
         this.day = day;
         this.price = price;
+        this.flightDuration = flightDuration;
+    }
+
+    public int getFlightDuration() {
+        return flightDuration;
+    }
+
+    public void setFlightDuration(int flightDuration) {
         this.flightDuration = flightDuration;
     }
 
