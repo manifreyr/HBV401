@@ -1,0 +1,7 @@
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane fx:controller="Main"
+            xmlns:fx="http://java.com/fxml">
+    <Button fx:id="myButton" text="Click Me!" AnchorPane.bottomAnchor="10" AnchorPane.rightAnchor="10"/>
+</AnchorPane>
