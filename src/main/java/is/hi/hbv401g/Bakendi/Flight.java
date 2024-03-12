@@ -2,7 +2,6 @@ package is.hi.hbv401g.Bakendi;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDate;
 
 public class Flight {
     private String flightNumber;
@@ -10,11 +9,9 @@ public class Flight {
     private String arrivalCity;
     private LocalDate day;
     private int price;
-
-
-
     private int flightDuration;
     private final LocalDateTime departureTime = LocalDateTime.now();
+    private int arrivalTime;
     private int availableSeats;
     private int reservedSeats;
     private Seat[] seats;

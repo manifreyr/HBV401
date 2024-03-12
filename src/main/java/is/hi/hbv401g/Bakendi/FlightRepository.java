@@ -31,7 +31,7 @@ public class FlightRepository {
         return flightList;
     }
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
 
         FlightRepository flightRepository = new FlightRepository();
         try {
