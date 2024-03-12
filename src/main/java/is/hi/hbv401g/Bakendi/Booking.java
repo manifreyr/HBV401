@@ -1,18 +1,18 @@
 package is.hi.hbv401g.Bakendi;
 
-import java.util.List;
+import java.time.LocalDate;
 
 public class Booking {
-    private User user;
-    private Flight[] flights;
-    private String bookingID;
-    private List<Seat> seats;
+    private String userID;
+    private String flightID;
+    private LocalDate flightDay;
+    private String seat;
 
-    public Booking(User user, Flight[] flights, String bookingID, List<Seat> seats) {
-        this.user = user;
-        this.flights = flights;
-        this.bookingID = bookingID;
-        this.seats = seats;
+    public Booking(String userID, String flightID, LocalDate flightDay, String seat) {
+        this.userID = userID;
+        this.flightID = flightID;
+        this.flightDay = flightDay;
+        this.seat = seat;
     }
 
     public User getUser() {
@@ -23,28 +23,28 @@ public class Booking {
         this.user = user;
     }
 
-    public Flight[] getFlights() {
-        return flights;
+    public Flight getFlight() {
+        return flight;
     }
 
-    public void setFlights(Flight[] flights) {
-        this.flights = flights;
+    public void setFlights(Flight flight) {
+        this.flight = flight;
     }
 
     public String getBookingID() {
-        return bookingID;
+        return flightDay;
     }
 
     public void setBookingID(String bookingID) {
-        this.bookingID = bookingID;
+        this.flightDay = bookingID;
     }
 
-    public List<Seat> getSeats() {
-        return seats;
+    public Seat getSeats() {
+        return seat;
     }
 
-    public void setSeats(List<Seat> seats) {
-        this.seats = seats;
+    public void setSeats(Seat seat) {
+        this.seat = seat;
     }
 
 
