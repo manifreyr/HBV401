@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="bua til fxml">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="Breytingar á db og repo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,17 +58,14 @@
   "keyToString": {
     "Application.DatabaseConnector.executor": "Run",
     "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
     "Maven.HBV401 [compile].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/maria/OneDrive - Menntaský/Desktop/Java/IntelliJ IDEA Community Edition 2022.2.1/plugins/javaFX",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,7 +74,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.2",
     "project.structure.side.proportion": "0.44252872",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "database.data.views",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -87,7 +83,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.FlightRepository">
     <configuration name="DatabaseConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="is.hi.hbv401g.Bakendi.DatabaseConnector" />
       <module name="HBV401" />
@@ -101,8 +97,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FlightRepository" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="is.hi.hbv401g.Bakendi.FlightRepository" />
+      <module name="HBV401" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="is.hi.hbv401g.Bakendi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FlightRepository" />
         <item itemvalue="Application.DatabaseConnector" />
       </list>
     </recent_temporary>
@@ -160,7 +170,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project structure og source, target, release uppært í 21 í POM" />
     <MESSAGE value="Breytingar á db og repo" />
-    <MESSAGE value="bua til fxml" />
-    <option name="LAST_COMMIT_MESSAGE" value="bua til fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Breytingar á db og repo" />
   </component>
 </project>
