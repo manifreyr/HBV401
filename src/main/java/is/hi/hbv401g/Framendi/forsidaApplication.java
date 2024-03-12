@@ -5,15 +5,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class forsidaApplication extends Application {
-    public static void main(String[] args) {
-        launch(args);
-    }
+import java.io.IOException;
 
-    public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(forsidaApplication.class.getResource("Forsida.fxml"));
+public class forsidaApplication extends Application {
+  @Override
+    public void start(Stage stage) throws IOException {
+        FXMLLoader loader = new FXMLLoader(forsidaApplication.class.getResource("/is.hi.hbvg401g.Framendi/Forsida.fxml"));
         Scene scene = new Scene( loader.load() );
         stage.setScene(scene);
         stage.show();
+    }
+    public static void main(String[] args) {
+        launch();
     }
 }
