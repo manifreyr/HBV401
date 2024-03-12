@@ -1,20 +1,18 @@
 package is.hi.hbv401g.Bakendi;
 
-import java.sql.Date;
+import java.time.LocalDate;
 
 public class Flight {
     private String flightNumber;
     private String departureCity;
     private String arrivalCity;
-    private Date day;
-    private Date arrivalTime;
+    private LocalDate day;
     private int price;
-
     private int availableSeats;
     private int reservedSeats;
     private Seat[] seats;
 
-    public Flight(String flightNumber, String departureCity, String arrivalCity, Date day, int price) {
+    public Flight(String flightNumber, String departureCity, String arrivalCity, LocalDate day, int price) {
         this.flightNumber = flightNumber;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
@@ -53,20 +51,16 @@ public class Flight {
         this.arrivalCity = arrivalCity;
     }
 
-    public Date getDay() {
+    public LocalDate getDay() {
         return day;
     }
 
-    public void setDay(Date day) {
+    public void setDay(LocalDate day) {
         this.day = day;
     }
-    public Date getArrivalTime() {
-        return arrivalTime;
-    }
 
-    public void setArrivalTime(Date arrivalTime) {
-        this.arrivalTime = arrivalTime;
-    }
+
+
     public int getPrice() {
         return price;
     }

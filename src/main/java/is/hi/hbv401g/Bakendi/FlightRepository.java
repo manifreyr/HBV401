@@ -3,6 +3,7 @@ package is.hi.hbv401g.Bakendi;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.LocalDate;
 
 public class FlightRepository {
 
@@ -14,9 +15,14 @@ public class FlightRepository {
              PreparedStatement preparedStatement = conn.prepareStatement(sql);
              ResultSet resultSet = preparedStatement.executeQuery()) {
 
-            //while(resultSet.next()){
-            //    return null;
-            //}
+            while(resultSet.next()){
+            Flight flight = new Flight(resultSet.getString("flightNumber"),
+                    resultSet.getString("departureCity"),
+                    resultSet.getString("arrivalCity"),
+                    LocalDate.parse(resultSet.getString("day")),
+                    resultSet.getInt("price"));
+            flightList.add(flight);
+            }
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
