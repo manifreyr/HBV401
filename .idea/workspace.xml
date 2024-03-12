@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="Breytingar á db og repo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/Flight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/Flight.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +111,7 @@
       <option name="presentableId" value="Default" />
       <updated>1708524485026</updated>
       <workItem from="1708524736634" duration="996000" />
-      <workItem from="1710240046153" duration="3884000" />
+      <workItem from="1710240046153" duration="5201000" />
     </task>
     <task id="LOCAL-00001" summary="Project structure og source, target, release uppært í 21 í POM">
       <option name="closed" value="true" />
