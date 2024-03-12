@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="HBV401">
+    <output-path>$PROJECT_DIR$/out/artifacts/HBV401</output-path>
+    <root id="root">
+      <element id="archive" name="HBV401.jar">
+        <element id="module-output" name="HBV401" />
+      </element>
+    </root>
+  </artifact>
+</component>
