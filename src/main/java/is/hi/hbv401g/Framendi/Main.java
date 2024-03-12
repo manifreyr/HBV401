@@ -7,14 +7,13 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-Parent root = FXMLLoader.load(getClass().getResource("Vidmot/Forsida.fxml"));
-
-
+import java.util.Objects;
 
 
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        //Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Vidmot/Forsida.fxml")));
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Forsida.fxml")); //src/main/resources/Vidmot/Forsida.fxml
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("horPumpKúkr");
@@ -24,5 +23,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch();
     }
+
 
 }

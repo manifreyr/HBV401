@@ -7,8 +7,10 @@
     <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="Breytingar á db og repo">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Framendi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Framendi/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Vidmot/Forsida.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vidmot/Forsida.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/flightBooking.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/flightBooking.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;history&quot;: [
@@ -74,7 +77,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "oppaaristyle",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Lenovo/Desktop/jdk-style/javafx-sdk-21.0.2/lib",
     "node.js.detected.package.eslint": "true",
