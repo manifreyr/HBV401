@@ -1,6 +1,8 @@
 package is.hi.hbv401g.Bakendi;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.chrono.ChronoLocalDate;
 
 public class Flight {
     private String flightNumber;
@@ -8,16 +10,19 @@ public class Flight {
     private String arrivalCity;
     private LocalDate day;
     private int price;
+    private int flightDuration;
+    private final LocalDateTime departureTime = LocalDateTime.now();
     private int availableSeats;
     private int reservedSeats;
     private Seat[] seats;
 
-    public Flight(String flightNumber, String departureCity, String arrivalCity, LocalDate day, int price) {
+    public Flight(String flightNumber, String departureCity, String arrivalCity, LocalDate day, int price, int flightDuration) {
         this.flightNumber = flightNumber;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
         this.day = day;
         this.price = price;
+        this.flightDuration = flightDuration;
     }
 
     public Seat[] getSeats() {
@@ -58,8 +63,6 @@ public class Flight {
     public void setDay(LocalDate day) {
         this.day = day;
     }
-
-
 
     public int getPrice() {
         return price;
