@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="Breytingar á db og repo">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Vidmot/Forsida.fxml" afterDir="false" />
+    <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="bua til fxml">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -60,7 +59,11 @@
   "keyToString": {
     "Application.DatabaseConnector.executor": "Run",
     "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
     "Maven.HBV401 [compile].executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -75,7 +78,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.2",
     "project.structure.side.proportion": "0.44252872",
-    "settings.editor.selected.configurable": "database.data.views",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -157,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project structure og source, target, release uppært í 21 í POM" />
     <MESSAGE value="Breytingar á db og repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Breytingar á db og repo" />
+    <MESSAGE value="bua til fxml" />
+    <option name="LAST_COMMIT_MESSAGE" value="bua til fxml" />
   </component>
 </project>
