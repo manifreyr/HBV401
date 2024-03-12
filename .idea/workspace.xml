@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="Breytingar á db og repo">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1edc8cad-a58d-4fbe-b854-8f719f86de45" name="Changes" comment="Project structure og source, target, release uppfært í 21 í POM">
+      <change afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Framendi/forsidaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Framendi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Framendi/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Vidmot/Forsida.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Vidmot/Forsida.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/BookingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Bakendi/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Framendi/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/is/hi/hbv401g/Framendi/forsidaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Vidmot/Forsida.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/is.hi.hbvg401g.Framendi/Forsida.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/flightBooking.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/flightBooking.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,32 +65,26 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.DatabaseConnector.executor": "Run",
-    "Application.FlightRepository.executor": "Run",
     "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
+    "Application.forsidaApplication.executor": "Run",
     "Maven.HBV401 [compile].executor": "Run",
-    "Maven.HBV401 [org.apache.maven.plugins:maven-clean-plugin:3.1.0:clean].executor": "Run",
-    "Maven.HBV401 [org.apache.maven.plugins:maven-install-plugin:2.5.2:help].executor": "Run",
-    "Maven.HBV401 [org.apache.maven.plugins:maven-install-plugin:2.5.2:install].executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
+    "Maven.HBV401 [org.apache.maven.plugins:maven-compiler-plugin:3.8.0:compile].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/jdk-style/javafx-sdk-21.0.2/lib",
+    "last_opened_file_path": "C:/Users/maria/OneDrive - Menntaský/Desktop/Java/IntelliJ IDEA Community Edition 2022.2.1/plugins/javaFX",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.2",
     "project.structure.side.proportion": "0.44252872",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "database.data.views",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -94,7 +93,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.forsidaApplication">
     <configuration name="DatabaseConnector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="is.hi.hbv401g.Bakendi.DatabaseConnector" />
       <module name="HBV401" />
@@ -121,22 +120,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="is.hi.hbv401g.Framendi.Main" />
+    <configuration name="forsidaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="is.hi.hbv401g.Framendi.forsidaApplication" />
       <module name="HBV401" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\Lenovo\Desktop\jdk-style\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.forsidaApplication" />
       <item itemvalue="Application.DatabaseConnector" />
       <item itemvalue="Application.FlightRepository" />
-      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.forsidaApplication" />
         <item itemvalue="Application.FlightRepository" />
         <item itemvalue="Application.DatabaseConnector" />
       </list>
@@ -195,6 +193,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Project structure og source, target, release uppært í 21 í POM" />
     <MESSAGE value="Breytingar á db og repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Breytingar á db og repo" />
+    <MESSAGE value="Project structure og source, target, release uppfært í 21 í POM" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project structure og source, target, release uppfært í 21 í POM" />
   </component>
 </project>
