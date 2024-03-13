@@ -21,6 +21,27 @@
         <artifactId>sqlite-jdbc</artifactId>
         <version>3.44.1.0</version>
     </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-graphics</artifactId>
+            <version>15.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>15.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>15.0.1</version>
+        </dependency>
     </dependencies>
 
 
@@ -74,7 +95,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.1</version>
                 <configuration>
-                    <mainClass>is.hi.hbv401g.Bakendi.FlightRepository</mainClass>
+                    <mainClass>is.hi.hbv401g.Framendi.Main</mainClass>
                 </configuration>
             </plugin>
         </plugins>
