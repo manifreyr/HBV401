@@ -5,8 +5,12 @@ import java.time.LocalDate;
 public class Booking {
     private String userID;
     private String flightID;
+
     private LocalDate flightDay;
+
+
     private String seat;
+
 
     public Booking(String userID, String flightID, LocalDate flightDay, String seat) {
         this.userID = userID;
@@ -15,37 +19,32 @@ public class Booking {
         this.seat = seat;
     }
 
-    public User getUser() {
-        return user;
+    public String getFlightID() {
+        return flightID;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setFlightID(String flightID) {
+        this.flightID = flightID;
+    }
+    public String getUserID() {
+        return userID;
     }
 
-    public Flight getFlight() {
-        return flight;
+    public void setUserID(String userID) {
+        this.userID = userID;
     }
-
-    public void setFlights(Flight flight) {
-        this.flight = flight;
-    }
-
-    public String getBookingID() {
+    public LocalDate getFlightDay() {
         return flightDay;
     }
 
-    public void setBookingID(String bookingID) {
-        this.flightDay = bookingID;
+    public void setFlightDay(LocalDate flightDay) {
+        this.flightDay = flightDay;
     }
-
-    public Seat getSeats() {
+    public String getSeat() {
         return seat;
     }
 
-    public void setSeats(Seat seat) {
+    public void setSeat(String seat) {
         this.seat = seat;
     }
-
-
 }

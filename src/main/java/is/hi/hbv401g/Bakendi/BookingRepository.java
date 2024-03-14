@@ -30,4 +30,15 @@ public class BookingRepository {
         }
         return bookingList;
     }
+    public static void main(String[] args) {
+        BookingRepository bookingRepository = new BookingRepository();
+        try {
+            List<Booking> bookings = bookingRepository.getAllBookings();
+            for (Booking booking : bookings) {
+                System.out.println(booking);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
