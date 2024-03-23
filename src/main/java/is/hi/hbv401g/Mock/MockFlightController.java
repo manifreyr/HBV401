@@ -6,7 +6,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FlightController {
+public class MockFlightController {
     MockFlightRepository mockFlightRepository = new MockFlightRepository();
 
     public void createFlight(Flight flight){
@@ -64,4 +64,5 @@ public class FlightController {
         }
         return false;
     }
+
 }

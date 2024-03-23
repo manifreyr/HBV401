@@ -4,10 +4,11 @@ import is.hi.hbv401g.Mock.MockFlightRepository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class FlightController {
-    MockFlightRepository mockFlightRepository = new MockFlightRepository();
+    private MockFlightRepository mockFlightRepository = new MockFlightRepository();
 
     public void createFlight(Flight flight){
         mockFlightRepository.addFlight(flight);
@@ -63,5 +64,17 @@ public class FlightController {
             }
         }
         return false;
+    }
+    public void sortFlightsByPrice(List<Flight> flights){
+        flights.sort(Comparator.comparingInt(Flight::getPrice));
+    }
+    public void sortFlightsByDate(List<Flight> flights){
+        flights.sort(Comparator.comparing(Flight::getDay));
+    }
+    public void sortFlightsByDepartureCity(List<Flight> flights){
+        flights.sort(Comparator.comparing(Flight::getDepartureCity));
+    }
+    public void sortFlightsByArrivalCity(List<Flight> flights){
+        flights.sort(Comparator.comparing(Flight::getArrivalCity));
     }
 }

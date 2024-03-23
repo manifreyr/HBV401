@@ -1,10 +1,12 @@
 package is.hi.hbv401g.Mock;
 
 import is.hi.hbv401g.Bakendi.Flight;
+import is.hi.hbv401g.Bakendi.FlightController;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import static junit.framework.TestCase.assertEquals;
@@ -59,5 +61,36 @@ public class FlightControllerTest {
     public void testGetFlightsByArrivalCity() {
         List<Flight> flightsByArrivalCity = flightController.getFlightsByArrivalCity("Moscow");
         assertEquals(flight.getArrivalCity(), flightsByArrivalCity.get(0).getArrivalCity());
+    }
+    @Test
+    public void testSortFlightsByPrice() {
+        List<Flight> flightsByPrice = mockFlightRepository.getAllFlights();
+        flightController.sortFlightsByPrice(flightsByPrice);
+        assertEquals(12000, flightsByPrice.get(0).getPrice());
+        assertEquals(15000, flightsByPrice.get(1).getPrice());
+        assertEquals(17000, flightsByPrice.get(2).getPrice());
+        assertEquals(20000, flightsByPrice.get(3).getPrice());
+        assertEquals(20000, flightsByPrice.get(4).getPrice());
+        assertEquals(30000, flightsByPrice.get(5).getPrice());
+    }
+    @Test
+    public void testSortFlightsByDate() {
+       Flight flight1 = new Flight("OB123", "Reykjavik", "Moscow", LocalDate.of(2024, 6, 17), 40000, 8);
+       Flight flight2 = new Flight("OB124", "Reykjavik", "London", LocalDate.of(2024, 6, 18), 40000, 3);
+       Flight flight3 = new Flight("OB125", "Reykjavik", "Paris", LocalDate.of(2024, 6, 19), 40000, 4);
+       Flight flight4 = new Flight("OB126", "Reykjavik", "Berlin", LocalDate.of(2024, 6, 20), 40000, 5);
+
+       List<Flight> flightsByDate = new ArrayList<>();
+       flightsByDate.add(flight4);
+       flightsByDate.add(flight3);
+       flightsByDate.add(flight2);
+       flightsByDate.add(flight1);
+
+       flightController.sortFlightsByDate(flightsByDate);
+
+       assertEquals(LocalDate.of(2024, 6, 17), flightsByDate.get(0).getDay());
+       assertEquals(LocalDate.of(2024, 6, 18), flightsByDate.get(1).getDay());
+       assertEquals(LocalDate.of(2024, 6, 19), flightsByDate.get(2).getDay());
+       assertEquals(LocalDate.of(2024, 6, 20), flightsByDate.get(3).getDay());
     }
 }
