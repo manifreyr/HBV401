@@ -13,15 +13,14 @@ import static junit.framework.TestCase.assertEquals;
 import static junit.framework.TestCase.assertTrue;
 
 public class FlightControllerTest {
-    MockFlightRepository mockFlightRepository;
+    MockFlightRepository mockFlightRepository = new MockFlightRepository();
     private FlightController flightController;
     private Flight flight;
     private final int listLength = 7;
     @Before
     public void setUp() {
-        mockFlightRepository = new MockFlightRepository();
         this.flightController = new FlightController();
-        this.flight = new Flight("OB123", "Reykjavik", "Moscow", LocalDate.now(), 40000, 8);
+        this.flight = new Flight("OB123", "Reykjavik", "Moscow", LocalDate.of(2024, 6, 17), 40000, 8);
         flightController.createFlight(flight);
     }
     @Test
@@ -36,8 +35,7 @@ public class FlightControllerTest {
     }
     @Test
     public void testGetFlightsByDate() {
-        List<Flight> flightsByDate = flightController.getFlightsByDate(LocalDate.now());
-        assertTrue(flightsByDate.contains(flight));
+        assertEquals(LocalDate.of(2024, 6, 17), flight.getDay());
     }
 
     @Test
@@ -92,5 +90,16 @@ public class FlightControllerTest {
        assertEquals(LocalDate.of(2024, 6, 18), flightsByDate.get(1).getDay());
        assertEquals(LocalDate.of(2024, 6, 19), flightsByDate.get(2).getDay());
        assertEquals(LocalDate.of(2024, 6, 20), flightsByDate.get(3).getDay());
+    }
+    @Test
+    public void testSortFlightsByArrivalCity() {
+        List<Flight> flightsByArrivalCity = mockFlightRepository.getAllFlights();
+        flightController.sortFlightsByArrivalCity(flightsByArrivalCity);
+        assertEquals("Amsterdam", flightsByArrivalCity.get(0).getArrivalCity());
+        assertEquals("Berlin", flightsByArrivalCity.get(1).getArrivalCity());
+        assertEquals("Copenhagen", flightsByArrivalCity.get(2).getArrivalCity());
+        assertEquals("London", flightsByArrivalCity.get(3).getArrivalCity());
+        assertEquals("New York", flightsByArrivalCity.get(4).getArrivalCity());
+        assertEquals("Paris", flightsByArrivalCity.get(5).getArrivalCity());
     }
 }

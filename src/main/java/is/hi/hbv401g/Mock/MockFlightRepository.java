@@ -23,17 +23,5 @@ public class MockFlightRepository {
     public void addFlight(Flight flight){
         flights.add(flight);
     }
-    public void removeFlight(Flight flight){
-        flights.remove(flight);
-    }
-   public Flight findFlightByFlightNumber(String flightNumber){
-       for(Flight flight : flights){
-           if(flight.getFlightNumber().equals(flightNumber)){
-               return flight;
-           }
-       }
-       return null;
-   }
-
 
 }
