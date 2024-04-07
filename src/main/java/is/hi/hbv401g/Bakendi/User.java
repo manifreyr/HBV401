@@ -1,30 +1,24 @@
 package is.hi.hbv401g.Bakendi;
 
 public class User {
-    private Booking[] bookings;
+    //private Booking[] bookings;
     private String userID;
-    private String userName;
-    private String userEmail;
-    public User(Booking[] bookings, String userEmail, String userID, String userName) {
-        this.bookings = bookings;
-        this.userEmail = userEmail;
+    private String userPhone;
+    private String firstName;
+    private String lastName;
+    public User(String userID, String userPhone, String firstName, String lastName) {
+        this.userPhone = userPhone;
         this.userID = userID;
-        this.userName = userName;
-    }
-
-    public Booking[] getBookings() {
-        return bookings;
-    }
-
-    public void setBookings(Booking[] bookings) {
-        this.bookings = bookings;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
     public String getUserName() {
-        return userName;
+        return firstName + " " + lastName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getUserID() {
@@ -35,11 +29,11 @@ public class User {
         this.userID = userID;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public String getUserPhone() {
+        return userPhone;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
     }
 }
