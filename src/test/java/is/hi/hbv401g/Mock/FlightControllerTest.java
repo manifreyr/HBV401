@@ -5,6 +5,7 @@ import is.hi.hbv401g.Bakendi.FlightController;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,20 +17,20 @@ public class FlightControllerTest {
     MockFlightRepository mockFlightRepository = new MockFlightRepository();
     private FlightController flightController;
     private Flight flight;
-    private final int listLength = 7;
+
     @Before
-    public void setUp() {
+    public void setUp() throws SQLException {
         this.flightController = new FlightController();
         this.flight = new Flight("OB123", "Reykjavik", "Moscow", LocalDate.of(2024, 6, 17), 40000, 8);
         flightController.createFlight(flight);
     }
     @Test
-    public void testCreateFlight() {
+    public void testCreateFlight() throws SQLException {
         flightController.createFlight(flight);
         assertTrue(flightController.flightExists(flight));
     }
     @Test
-    public void testFindByNumber() {
+    public void testFindByNumber() throws SQLException {
         Flight flightByNumber = flightController.getFlightByNumber("OB123");
         assertEquals(flightByNumber, flight);
     }
@@ -51,12 +52,13 @@ public class FlightControllerTest {
         assertEquals(newPrice, flight.getPrice());
     }
     @Test
-    public void testGetFlightsByDepartureCity() {
+    public void testGetFlightsByDepartureCity() throws SQLException {
         List<Flight> flightsByDepartureCity = flightController.getFlightsByDepartureCity("Reykjavik");
+        int listLength = 7;
         assertEquals(listLength, flightsByDepartureCity.size());
     }
     @Test
-    public void testGetFlightsByArrivalCity() {
+    public void testGetFlightsByArrivalCity() throws SQLException {
         List<Flight> flightsByArrivalCity = flightController.getFlightsByArrivalCity("Moscow");
         assertEquals(flight.getArrivalCity(), flightsByArrivalCity.get(0).getArrivalCity());
     }

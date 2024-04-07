@@ -5,10 +5,7 @@ import java.time.LocalDate;
 public class Booking {
     private String userID;
     private String flightID;
-
     private LocalDate flightDay;
-
-
     private String seat;
 
 
@@ -47,4 +44,5 @@ public class Booking {
     public void setSeat(String seat) {
         this.seat = seat;
     }
+
 }

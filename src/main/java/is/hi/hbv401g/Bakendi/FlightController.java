@@ -1,17 +1,15 @@
 package is.hi.hbv401g.Bakendi;
 
-import is.hi.hbv401g.Mock.MockFlightRepository;
-
+import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class FlightController {
-    private MockFlightRepository mockFlightRepository = new MockFlightRepository();
-
-    public void createFlight(Flight flight){
-        mockFlightRepository.addFlight(flight);
+    private final FlightRepository flightRepository = new FlightRepository();
+    public void createFlight(Flight flight) throws SQLException {
+        flightRepository.addFlight(flight);
     }
     public void updateFlightDate(Flight flight, LocalDate date){
         flight.setDay(date);
@@ -19,46 +17,46 @@ public class FlightController {
     public void updateFlightPrice(Flight flight, int price){
         flight.setPrice(price);
     }
-    public Flight getFlightByNumber(String flightNumber){
-        for(Flight flight: mockFlightRepository.getAllFlights()){
+    public Flight getFlightByNumber(String flightNumber) throws SQLException {
+        for(Flight flight: flightRepository.getAllFlights()){
             if(flight.getFlightNumber().equals(flightNumber)){
                 return flight;
             }
         }
         return null;
     }
-    public List<Flight> getFlightsByDate(LocalDate date){
+    public List<Flight> getFlightsByDate(LocalDate date) throws SQLException {
         List<Flight> flights = new ArrayList<>();
-        for(Flight flight: mockFlightRepository.getAllFlights()){
+        for(Flight flight: flightRepository.getAllFlights()){
             if(flight.getDay().equals(date)){
                 flights.add(flight);
             }
         }
         return flights;
     }
-    public List<Flight> getAllFlights(){
-        return mockFlightRepository.getAllFlights();
+    public List<Flight> getAllFlights() throws SQLException {
+        return flightRepository.getAllFlights();
     }
-    public List<Flight> getFlightsByDepartureCity(String departureCity){
+    public List<Flight> getFlightsByDepartureCity(String departureCity) throws SQLException {
         List<Flight> flights = new ArrayList<>();
-        for(Flight flight: mockFlightRepository.getAllFlights()){
+        for(Flight flight: flightRepository.getAllFlights()){
             if(flight.getDepartureCity().equals(departureCity)){
                 flights.add(flight);
             }
         }
         return flights;
     }
-    public List<Flight> getFlightsByArrivalCity(String arrivalCity){
+    public List<Flight> getFlightsByArrivalCity(String arrivalCity) throws SQLException {
         List<Flight> flights = new ArrayList<>();
-        for(Flight flight: mockFlightRepository.getAllFlights()){
+        for(Flight flight: flightRepository.getAllFlights()){
             if(flight.getArrivalCity().equals(arrivalCity)){
                 flights.add(flight);
             }
         }
         return flights;
     }
-    public boolean flightExists(Flight flight){
-        for(Flight f: mockFlightRepository.getAllFlights()){
+    public boolean flightExists(Flight flight) throws SQLException {
+        for(Flight f: flightRepository.getAllFlights()){
             if(f.getFlightNumber().equals(flight.getFlightNumber())){
                 return true;
             }
@@ -76,5 +74,8 @@ public class FlightController {
     }
     public void sortFlightsByArrivalCity(List<Flight> flights){
         flights.sort(Comparator.comparing(Flight::getArrivalCity));
+    }
+    public void deleteFlight(Flight flight){
+        flightRepository.deleteFlight(flight);
     }
 }
