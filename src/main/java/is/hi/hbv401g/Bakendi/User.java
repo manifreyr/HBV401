@@ -12,6 +12,12 @@ public class User {
         this.firstName = firstName;
         this.lastName = lastName;
     }
+    public String getFirstName() {
+        return firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
     public String getUserName() {
         return firstName + " " + lastName;
     }
@@ -35,5 +41,9 @@ public class User {
 
     public void setUserPhone(String userPhone) {
         this.userPhone = userPhone;
+    }
+
+    public String toString() {
+        return userID + " " + userPhone + " " + firstName + " " + lastName;
     }
 }
