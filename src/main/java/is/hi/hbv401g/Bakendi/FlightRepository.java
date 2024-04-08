@@ -7,11 +7,9 @@ import java.time.LocalDate;
 
 public class FlightRepository {
 
-    private List<Flight> flightList;
-
     public List<Flight> getAllFlights() throws SQLException {
         String sql = "SELECT * FROM Flight";
-        flightList = new ArrayList<>();
+        List<Flight> flightList = new ArrayList<>();
 
         try (Connection conn = DatabaseConnector.connect();
              PreparedStatement preparedStatement = conn.prepareStatement(sql);
@@ -43,7 +41,7 @@ public class FlightRepository {
              preparedStatement.setInt(5, flight.getPrice());
              preparedStatement.setInt(6, flight.getFlightDuration());
              }
-        flightList.add(flight);
+        //Ætti ekki að þurfa á eftir að skrifa test-flightList.add(flight);
     }
     public void deleteFlight(Flight flight) {
         String sql = "DELETE FROM Flight WHERE flightNumber = ?";
@@ -54,7 +52,7 @@ public class FlightRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        flightList.remove(flight);
+        //Ætti ekki að þurfa á eftir að skrifa test-flightList.remove(flight);
     }
 
     public static void main(String[] args) {
