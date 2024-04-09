@@ -7,6 +7,7 @@ public class Booking {
     private String flightID;
     private LocalDate flightDay;
     private String seat;
+    private User user;
 
 
     public Booking(String userID, String flightID, LocalDate flightDay, String seat) {
@@ -43,6 +44,14 @@ public class Booking {
 
     public void setSeat(String seat) {
         this.seat = seat;
+    }
+
+
+
+    public static void main(String[] args) {
+        User user1 = new User("user1", "123456789", "John", "Doe");
+        Flight flight = new Flight("OB123", "Reykjavík", "London", LocalDate.now(), 5000, 4);
+        Booking booking = new Booking(user1.getUserID(), flight.getFlightNumber(), flight.getDay(), "1A");
     }
 
 }
