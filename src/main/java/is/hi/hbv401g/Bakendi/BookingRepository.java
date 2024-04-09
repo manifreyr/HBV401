@@ -30,6 +30,28 @@ public class BookingRepository {
         }
         return bookingList;
     }
+    public void addBooking(Booking booking) {
+        String sql = "INSERT INTO Bookings VALUES (?, ?, ?, ?)";
+        sqlConnection(booking, sql);
+    }
+    public void deleteBooking(Booking booking) {
+        String sql = "DELETE FROM Bookings WHERE seatID = ? AND userSSNo = ? AND flightNumber = ? AND flightDay = ?";
+        sqlConnection(booking, sql);
+    }
+
+    private void sqlConnection(Booking booking, String sql) {
+        try (Connection connection = DatabaseConnector.connect();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(2, booking.getUserID());
+            preparedStatement.setString(3, booking.getFlightID());
+            preparedStatement.setDate(4, java.sql.Date.valueOf(booking.getFlightDay()));
+            preparedStatement.setString(1, booking.getSeat());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) {
         BookingRepository bookingRepository = new BookingRepository();
         try {
