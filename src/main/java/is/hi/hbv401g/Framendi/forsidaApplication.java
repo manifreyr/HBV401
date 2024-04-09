@@ -16,7 +16,7 @@ public class forsidaApplication extends Application {
       ViewSwitcher.setScene(scene);
       ViewSwitcher.switchTo(View.OPNA);
       stage.setScene(scene);
-      stage.setTitle("forsíða");
+      stage.setTitle("Flugpöntun");
       stage.show();
     }
     public static void main(String[] args) {
