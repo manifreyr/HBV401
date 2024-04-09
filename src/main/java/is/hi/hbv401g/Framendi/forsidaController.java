@@ -1,21 +1,16 @@
 package is.hi.hbv401g.Framendi;
 
-import is.hi.hbv401g.Bakendi.Flight;
 import is.hi.hbv401g.Bakendi.FlightController;
-import is.hi.hbv401g.Bakendi.FlightRepository;
-import is.hi.hbv401g.Bakendi.FlightView;
+import is.hi.hbv401g.Bakendi.FlightConnect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 public class forsidaController {
 
@@ -28,7 +23,7 @@ public class forsidaController {
     @FXML
     private ComboBox<String> fxTo;
     private final FlightController flightController = new FlightController();
-    private FlightView flightView;
+    private FlightConnect flightConnect;
 
     public void initialize() throws SQLException {
         ObservableList<String> departureObservableList = FXCollections.observableArrayList(flightController.getAllDepartures());
@@ -43,11 +38,11 @@ public class forsidaController {
     @FXML
     void nextScene(ActionEvent event) {
         System.out.println(fxTo.getValue() + fxDepartureDate.getValue());
-        flightView = new FlightView(fxTo.getValue(), fxFrom.getValue(), fxDepartureDate.getValue(),  fxArrivalDate.getValue());
+        flightConnect = new FlightConnect(fxTo.getValue(), fxFrom.getValue(), fxDepartureDate.getValue(),  fxArrivalDate.getValue());
         ViewSwitcher.switchTo(View.FLIGHT);
     }
-    public FlightView getFlightView(){
-        return flightView;
+    public FlightConnect getFlightConnect(){
+        return flightConnect;
     }
 
 

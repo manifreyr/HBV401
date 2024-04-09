@@ -112,19 +112,19 @@ public class FlightController {
         }
         return arrivals;
     }
-    public List<Flight> returnAvailableFlights(FlightView flightView) throws SQLException {
+    public List<Flight> returnAvailableFlights(FlightConnect flightConnect) throws SQLException {
         List<Flight> availableFlights = new ArrayList<>();
         for (Flight flight : flightRepository.getAllFlights()) {
-            if (flight.getDepartureCity().equals(flightView.getDepartureCity()) && flight.getArrivalCity().equals(flightView.getArrivalCity()) && flight.getDay().equals(flightView.getDepartureDate())) {
+            if (flight.getDepartureCity().equals(flightConnect.getDepartureCity()) && flight.getArrivalCity().equals(flightConnect.getArrivalCity()) && flight.getDay().equals(flightConnect.getDepartureDate())) {
                 availableFlights.add(flight);
             }
         }
         return availableFlights;
     }
     public static void main(String[] args) throws SQLException {
-        FlightView flightView = new FlightView("New York", "Reykjavik", LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 1));
+        FlightConnect flightConnect = new FlightConnect("New York", "Reykjavik", LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 1));
         FlightController flightController = new FlightController();
-        System.out.print(flightController.returnAvailableFlights(flightView));
+        System.out.print(flightController.returnAvailableFlights(flightConnect));
     }
 
 }

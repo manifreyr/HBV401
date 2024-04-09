@@ -2,13 +2,13 @@ package is.hi.hbv401g.Bakendi;
 
 import java.time.LocalDate;
 
-public class FlightView {
+public class FlightConnect {
     private String arrivalCity;
     private String departureCity;
     private LocalDate departureDate;
     private LocalDate arrivalDate;
 
-    public FlightView(String arrivalCity, String departureCity, LocalDate departureDate, LocalDate arrivalDate) {
+    public FlightConnect(String arrivalCity, String departureCity, LocalDate departureDate, LocalDate arrivalDate) {
         this.arrivalCity = arrivalCity;
         this.departureCity = departureCity;
         this.departureDate = departureDate;
