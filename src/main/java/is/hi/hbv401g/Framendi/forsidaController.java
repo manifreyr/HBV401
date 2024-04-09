@@ -2,8 +2,7 @@ package is.hi.hbv401g.Framendi;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 public class forsidaController {
@@ -19,10 +18,12 @@ public class forsidaController {
             arrivalDate.setVisible(false);
         }
     }
+
     @FXML
     void nextScene(ActionEvent event) {
         System.out.print("smellt á takka");
         ViewSwitcher.switchTo(View.DETAIL);
-
     }
+
 }
+
