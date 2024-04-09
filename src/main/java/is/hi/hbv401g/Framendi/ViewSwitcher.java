@@ -8,18 +8,23 @@ import javafx.scene.Scene;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
+import java.util.Objects;
+import java.util.Scanner;
 
 public class ViewSwitcher {
-    private static Map<is.hi.hbv401g.Framendi.View, Parent> cache = new HashMap<>();
+    private static Map<View, Parent> cache = new HashMap<>();
+    private static final Map<View, Object> controllers = new HashMap<>();
 
     private static Scene scene;
 
     public static void setScene(Scene scene) {
         ViewSwitcher.scene = scene;
     }
+    public static Scene getScene(){
+        return ViewSwitcher.scene;
+    }
 
-    public static void switchTo(is.hi.hbv401g.Framendi.View view) {
+    public static void switchTo(View view) {
         if (scene == null) {
             System.out.println("No scene was set");
             return;
@@ -27,11 +32,18 @@ public class ViewSwitcher {
 
         try {
             Parent root;
-            System.out.println("Loading from FXML");
+            FXMLLoader loader = null;
 
-            root = FXMLLoader.load(
-                    ViewSwitcher.class.getResource(view.getFileName())
-            );
+            if (cache.containsKey(view)) {
+                System.out.println("Loading from cache");
+                root = cache.get(view);
+            } else {
+                loader = new FXMLLoader(ViewSwitcher.class.getResource(view.getFileName()));
+                root = loader.load();
+                cache.put(view, root);
+                scene.setRoot(root);
+                controllers.put(view, loader.getController());
+            }
 
             scene.setRoot(root);
 
@@ -40,6 +52,6 @@ public class ViewSwitcher {
         }
     }
     public static Object lookup(View v){
-        return cache.get(v);
+        return controllers.get(v);
     }
 }

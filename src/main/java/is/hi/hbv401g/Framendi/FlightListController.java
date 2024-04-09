@@ -5,12 +5,14 @@ import is.hi.hbv401g.Bakendi.FlightController;
 import is.hi.hbv401g.Bakendi.FlightView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 
 import java.sql.SQLException;
 
 public class FlightListController {
     private forsidaController fController;
+    @FXML
     private ListView<Flight> fxFlights;
 
     private final FlightController flightController = new FlightController();
