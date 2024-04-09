@@ -8,7 +8,7 @@ import javafx.collections.*;
 
 public class FlightRepository {
 
-    public ObservableList<Flight> getAllFlights() throws SQLException {
+    public List<Flight> getAllFlights() throws SQLException {
         String sql = "SELECT * FROM Flight";
         List<Flight> flightList = new ArrayList<>();
 
@@ -42,7 +42,6 @@ public class FlightRepository {
              preparedStatement.setInt(5, flight.getPrice());
              preparedStatement.setInt(6, flight.getFlightDuration());
              }
-        //Ætti ekki að þurfa á eftir að skrifa test-flightList.add(flight);
     }
     public void deleteFlight(Flight flight) {
         String sql = "DELETE FROM Flight WHERE flightNumber = ?";
@@ -53,7 +52,6 @@ public class FlightRepository {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        //Ætti ekki að þurfa á eftir að skrifa test-flightList.remove(flight);
     }
 
     public static void main(String[] args) {
