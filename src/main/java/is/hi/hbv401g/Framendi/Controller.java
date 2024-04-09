@@ -15,7 +15,7 @@ public class Controller {
     private FlightRepository flightRepository = new FlightRepository();
 
     public void initialize()throws SQLException{
-        Fxflights.setItems(flightRepository.getAllFlights());
+        //Fxflights.setItems(flightRepository.getAllFlights());
     }
     public static void main(String[] args) throws SQLException {
 

@@ -95,4 +95,8 @@ public class Flight {
     public void setReservedSeats(int reservedSeats) {
         this.reservedSeats = reservedSeats;
     }
+    @Override
+    public String toString(){
+        return departureCity + " : " + price;
+    }
 }

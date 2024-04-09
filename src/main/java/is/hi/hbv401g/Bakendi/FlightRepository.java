@@ -8,7 +8,7 @@ import javafx.collections.*;
 
 public class FlightRepository {
 
-    public ObservableList<Flight> getAllFlights() throws SQLException {
+    public List<Flight> getAllFlights() throws SQLException {
         String sql = "SELECT * FROM Flight";
         List<Flight> flightList = new ArrayList<>();
 
