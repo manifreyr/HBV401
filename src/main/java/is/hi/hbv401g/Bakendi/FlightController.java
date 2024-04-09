@@ -78,4 +78,22 @@ public class FlightController {
     public void deleteFlight(Flight flight){
         flightRepository.deleteFlight(flight);
     }
-}
+    public List<String> getAllDepartures() throws SQLException {
+        List<String> departures = new ArrayList<>();
+        for(Flight flight: flightRepository.getAllFlights()){
+            if(!departures.contains(flight.getDepartureCity())){
+                departures.add(flight.getDepartureCity());
+            }
+        }
+        return departures;
+    }
+    public List<String> getAllArrivals() throws SQLException {
+        List<String> arrivals = new ArrayList<>();
+        for(Flight flight: flightRepository.getAllFlights()){
+            if(!arrivals.contains(flight.getArrivalCity())){
+                arrivals.add(flight.getArrivalCity());
+            }
+        }
+        return arrivals;
+    }
+    }
