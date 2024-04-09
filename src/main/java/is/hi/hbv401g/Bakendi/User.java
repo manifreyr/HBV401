@@ -46,4 +46,9 @@ public class User {
     public String toString() {
         return userID + " " + userPhone + " " + firstName + " " + lastName;
     }
+
+    public static void main(String[] args) {
+
+    }
+
 }
