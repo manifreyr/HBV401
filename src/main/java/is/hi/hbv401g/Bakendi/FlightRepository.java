@@ -4,10 +4,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDate;
+import javafx.collections.*;
 
 public class FlightRepository {
 
-    public List<Flight> getAllFlights() throws SQLException {
+    public ObservableList<Flight> getAllFlights() throws SQLException {
         String sql = "SELECT * FROM Flight";
         List<Flight> flightList = new ArrayList<>();
 
