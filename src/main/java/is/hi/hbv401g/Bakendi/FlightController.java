@@ -112,13 +112,21 @@ public class FlightController {
         }
         return arrivals;
     }
-    public List<Flight> returnAvailableFlights(String departureCity, String arrivalCity, LocalDate date) throws SQLException {
+    public List<Flight> returnAvailableFlights(String departureCity, String arrivalCity, LocalDate departureDate, LocalDate returnDate) throws SQLException {
         List<Flight> availableFlights = new ArrayList<>();
         for (Flight flight : flightRepository.getAllFlights()) {
-            if (flight.getDepartureCity().equals(departureCity) && flight.getArrivalCity().equals(arrivalCity) && flight.getDay().equals(date)) {
+            if (flight.getDepartureCity().equals(departureCity) && flight.getArrivalCity().equals(arrivalCity) && flight.getDay().equals(departureDate)) {
                 availableFlights.add(flight);
             }
         }
         return availableFlights;
     }
+    public static void main(String[] args) throws SQLException {
+        FlightController flightController = new FlightController();
+        List<Flight> flights = flightController.getAllFlights();
+        for (Flight flight : flights) {
+            System.out.println(flight);
+        }
+    }
+
 }
