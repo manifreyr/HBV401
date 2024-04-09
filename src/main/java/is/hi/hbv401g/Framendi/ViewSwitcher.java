@@ -39,4 +39,7 @@ public class ViewSwitcher {
             e.printStackTrace();
         }
     }
+    public static Object lookup(View v){
+        return cache.get(v);
+    }
 }

@@ -112,10 +112,10 @@ public class FlightController {
         }
         return arrivals;
     }
-    public List<Flight> returnAvailableFlights(String departureCity, String arrivalCity, LocalDate departureDate, LocalDate returnDate) throws SQLException {
+    public List<Flight> returnAvailableFlights(FlightView flightView) throws SQLException {
         List<Flight> availableFlights = new ArrayList<>();
         for (Flight flight : flightRepository.getAllFlights()) {
-            if (flight.getDepartureCity().equals(departureCity) && flight.getArrivalCity().equals(arrivalCity) && flight.getDay().equals(departureDate)) {
+            if (flight.getDepartureCity().equals(flightView.getDepartureCity()) && flight.getArrivalCity().equals(flightView.getArrivalCity()) && flight.getDay().equals(flightView.getDepartureDate())) {
                 availableFlights.add(flight);
             }
         }
