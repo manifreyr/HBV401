@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="483.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.forsidaController">
-    <Button layoutX="213.0" layoutY="397.0" onAction="#nextScene" text="Næsta síða" AnchorPane.bottomAnchor="56.0" AnchorPane.rightAnchor="49.0" />
+<AnchorPane prefHeight="483.0" prefWidth="344.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.forsidaController">
+    <Button fx:id="aframButton" layoutX="213.0" layoutY="397.0" onAction="#nextScene" text="Næsta síða" AnchorPane.bottomAnchor="56.0" AnchorPane.rightAnchor="49.0" />
    <Text layoutX="121.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trip details" textAlignment="CENTER" wrappingWidth="103.125">
       <font>
          <Font name="Arial" size="14.0" />
       </font>
    </Text>
-   <TextField layoutX="120.0" layoutY="108.0"  prefHeight="25.0" prefWidth="137.0" />
+   <TextField layoutX="120.0" layoutY="108.0" prefHeight="25.0" prefWidth="137.0" />
    <TextField layoutX="120.0" layoutY="151.0" prefHeight="25.0" prefWidth="137.0" />
    <Text layoutX="67.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="From" />
    <Text layoutX="67.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="to" />
@@ -25,14 +19,14 @@
    <DatePicker layoutX="111.0" layoutY="242.0" />
    <Text layoutX="14.0" layoutY="259.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure date" />
    <Text layoutX="224.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-   <MenuButton fx:id="fjoldi" layoutX="102.0" layoutY="332.0" mnemonicParsing="false" text="Number of people">
+   <MenuButton layoutX="102.0" layoutY="332.0" mnemonicParsing="false" text="Number of people">
      <items>
-        <MenuItem fx:id="farþegi1" mnemonicParsing="false" text="1" />
-        <MenuItem fx:id="farþegi2" mnemonicParsing="false" text="2" />
-        <MenuItem fx:id="farþegi3" mnemonicParsing="false" text="3" />
-        <MenuItem fx:id="farþegi4" mnemonicParsing="false" text="4" />
-        <MenuItem fx:id="farþegi5" mnemonicParsing="false" text="5" />
-        <MenuItem fx:id="farþegi6" mnemonicParsing="false" text="6" />
+        <MenuItem mnemonicParsing="false" text="1" />
+        <MenuItem mnemonicParsing="false" text="2" />
+        <MenuItem mnemonicParsing="false" text="3" />
+        <MenuItem mnemonicParsing="false" text="4" />
+        <MenuItem mnemonicParsing="false" text="5" />
+        <MenuItem mnemonicParsing="false" text="6" />
 
      </items>
    </MenuButton>
