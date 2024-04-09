@@ -122,11 +122,9 @@ public class FlightController {
         return availableFlights;
     }
     public static void main(String[] args) throws SQLException {
+        FlightView flightView = new FlightView("New York", "Reykjavik", LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 1));
         FlightController flightController = new FlightController();
-        List<Flight> flights = flightController.getAllFlights();
-        for (Flight flight : flights) {
-            System.out.println(flight);
-        }
+        System.out.print(flightController.returnAvailableFlights(flightView));
     }
 
 }
