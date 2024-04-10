@@ -41,6 +41,7 @@ public class Flight {
     public void setSeats(Seat[] seats) {
         this.seats = seats;
     }
+
     public String getFlightNumber() {
         return flightNumber;
     }
@@ -96,16 +97,10 @@ public class Flight {
     public void setReservedSeats(int reservedSeats) {
         this.reservedSeats = reservedSeats;
     }
+
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        return "Flight{" +
-                "flightNumber='" + flightNumber + '\'' +
-                ", departureCity='" + departureCity + '\'' +
-                ", arrivalCity='" + arrivalCity + '\'' +
-                ", day=" + day.format(formatter) +
-                ", price=" + price +
-                ", flightDuration=" + flightDuration +
-                '}';
+        return departureCity + " <<< " + arrivalCity + " : " + price + " kr";
     }
 }
