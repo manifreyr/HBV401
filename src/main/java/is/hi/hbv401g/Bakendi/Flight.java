@@ -2,6 +2,7 @@ package is.hi.hbv401g.Bakendi;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class Flight {
     private String flightNumber;
@@ -94,5 +95,17 @@ public class Flight {
 
     public void setReservedSeats(int reservedSeats) {
         this.reservedSeats = reservedSeats;
+    }
+    @Override
+    public String toString() {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return "Flight{" +
+                "flightNumber='" + flightNumber + '\'' +
+                ", departureCity='" + departureCity + '\'' +
+                ", arrivalCity='" + arrivalCity + '\'' +
+                ", day=" + day.format(formatter) +
+                ", price=" + price +
+                ", flightDuration=" + flightDuration +
+                '}';
     }
 }
