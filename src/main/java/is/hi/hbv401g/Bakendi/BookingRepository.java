@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class BookingRepository {
                 Booking booking = new Booking(
                         resultSet.getString("userSSNo"),
                         resultSet.getString("flightNumber"),
-                        resultSet.getDate("day").toLocalDate(),
+                        resultSet.getDate("flightDay").toLocalDate(),
                         resultSet.getString("seatID")
                 );
                 bookingList.add(booking);
@@ -54,6 +55,10 @@ public class BookingRepository {
 
     public static void main(String[] args) {
         BookingRepository bookingRepository = new BookingRepository();
+        User user = new User("1809893479", "8976756", "Grace", "Kelly");
+        Flight flight = new Flight("OB989", "Reykjavík", "Athens", LocalDate.now(), 80000, 8);
+        Booking newBooking = new Booking(user.getUserID(), flight.getFlightNumber(), flight.getDay(), "1A");
+        bookingRepository.addBooking(newBooking);
         try {
             List<Booking> bookings = bookingRepository.getAllBookings();
             for (Booking booking : bookings) {
