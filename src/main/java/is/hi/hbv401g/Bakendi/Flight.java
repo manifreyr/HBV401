@@ -99,6 +99,7 @@ public class Flight {
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        return flightNumber + ": " + departureCity + " << " + arrivalCity + " << " + day.format(formatter) + " : " + price + " Hours: " + flightDuration;
+        return flightNumber + ": " + departureCity + " << " + arrivalCity + " << " + day.format(formatter)
+                + "\n " + "Price " + price + " ISK " + "\n " + "Flight duration " + flightDuration + " hours";
     }
 }
