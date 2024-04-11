@@ -73,8 +73,9 @@ public class FlightController {
         return false;
     }
 
-    public void sortFlightsByPrice(List<Flight> flights) {
+    public List<Flight> sortFlightsByPrice(List<Flight> flights) {
         flights.sort(Comparator.comparingInt(Flight::getPrice));
+        return flights;
     }
 
     public void sortFlightsByDate(List<Flight> flights) {

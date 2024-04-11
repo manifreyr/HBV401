@@ -10,24 +10,26 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
 
 import java.sql.SQLException;
+import java.util.List;
 
-public class FlightListController {
+public class ReturnController {
     private forsidaController fController;
     @FXML
     private ListView<Flight> fxFlights;
     @FXML
     private MenuButton fxSort;
+
     private final FlightController flightController = new FlightController();
-    public void initialize() throws SQLException {
-        fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
-        ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getOutBoundConnect()));
-        fxFlights.setItems(flightObservableList);
-    }
     public void nextScene(ActionEvent event){
-        ViewSwitcher.switchTo(View.RETURN);
+        ViewSwitcher.switchTo(View.FINAL);
     }
     public void pastScene(ActionEvent event){
-        ViewSwitcher.switchTo(View.OPNA);
+        ViewSwitcher.switchTo(View.FLIGHT);
+    }
+    public void initialize() throws SQLException {
+        fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
+        ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getReturnConnect()));
+        fxFlights.setItems(flightObservableList);
     }
     public void sortLowHigh(ActionEvent event){
         fxSort.setText("Price: Low to high");
@@ -48,7 +50,5 @@ public class FlightListController {
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getReturnConnect()));
         fxFlights.setItems(flightObservableList);
     }
-
-
 
 }

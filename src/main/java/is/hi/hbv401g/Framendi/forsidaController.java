@@ -6,6 +6,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.input.MouseEvent;
@@ -19,11 +20,14 @@ public class forsidaController {
     @FXML
     private DatePicker fxDepartureDate;
     @FXML
+    private CheckBox fxCheckbox;
+    @FXML
     private ComboBox<String> fxFrom; //Listi með flugum
     @FXML
     private ComboBox<String> fxTo;
     private final FlightController flightController = new FlightController();
-    private FlightConnect flightConnect;
+    private FlightConnect outBoundConnect;
+    private FlightConnect returnConnect;
 
     public void initialize() throws SQLException {
         ObservableList<String> departureObservableList = FXCollections.observableArrayList(flightController.getAllDepartures());
@@ -37,12 +41,21 @@ public class forsidaController {
     }
     @FXML
     void nextScene(ActionEvent event) {
-        System.out.println(fxTo.getValue() + fxDepartureDate.getValue());
-        flightConnect = new FlightConnect(fxTo.getValue(), fxFrom.getValue(), fxDepartureDate.getValue(),  fxArrivalDate.getValue());
-        ViewSwitcher.switchTo(View.FLIGHT);
+        if(fxCheckbox.isSelected()){
+            outBoundConnect = new FlightConnect(fxTo.getValue(), fxFrom.getValue(), fxDepartureDate.getValue(),  fxArrivalDate.getValue());
+            returnConnect = new FlightConnect(fxFrom.getValue(), fxTo.getValue(), fxArrivalDate.getValue(),  fxDepartureDate.getValue());
+            ViewSwitcher.switchTo(View.FLIGHT);
+        }
+        else{
+            outBoundConnect = new FlightConnect(fxTo.getValue(), fxFrom.getValue(), fxDepartureDate.getValue(),  fxArrivalDate.getValue());
+            ViewSwitcher.switchTo(View.FLIGHT);
+        }
     }
-    public FlightConnect getFlightConnect(){
-        return flightConnect;
+    public FlightConnect getOutBoundConnect(){
+        return outBoundConnect;
+    }
+    public FlightConnect getReturnConnect(){
+        return returnConnect;
     }
 
 
