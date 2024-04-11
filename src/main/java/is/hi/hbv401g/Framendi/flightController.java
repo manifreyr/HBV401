@@ -6,10 +6,6 @@ import javafx.scene.control.*;
 
 public class flightController {
 
-    @FXML
-    void pastScene(ActionEvent event) {
-        System.out.print("smellt á takka");
-        ViewSwitcher.switchTo(View.DETAIL);
-    }
+
 
 }
