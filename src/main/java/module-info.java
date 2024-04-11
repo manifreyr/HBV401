@@ -3,6 +3,7 @@ module is.hi.hbv401g.Framendi {
     requires javafx.fxml;
     requires javafx.graphics;
     requires java.sql;
+    requires java.desktop;
 
 
     opens is.hi.hbv401g.Framendi to javafx.fxml;
