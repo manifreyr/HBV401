@@ -49,6 +49,17 @@ public class FlightListController {
         fxFlights.setItems(flightObservableList);
     }
 
+    @FXML
+    void pastScene(ActionEvent event) {
+        ViewSwitcher.switchTo(View.OPNA);
+    }
+    @FXML
+    void nextScene(ActionEvent event) {
+        ViewSwitcher.switchTo(View.DETAIL);
+    }
+
+
+
 
 
 }
