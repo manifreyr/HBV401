@@ -5,7 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingController {
-    private final BookingRepository bookingRepository = new BookingRepository();
+    private UserRepository userRepository = new UserRepository();
+    private BookingRepository bookingRepository = new BookingRepository();
     public void addBooking(Booking booking) {
         bookingRepository.addBooking(booking);
     }
@@ -15,5 +16,10 @@ public class BookingController {
     public void getAllBookings() throws SQLException {
         bookingRepository.getAllBookings();
     }
-
+    public List<User> getAllUsers() throws SQLException {
+        return userRepository.getAllUsers();
+    }
+    public void addUser(User user) {
+        userRepository.addUser(user);
+    }
 }

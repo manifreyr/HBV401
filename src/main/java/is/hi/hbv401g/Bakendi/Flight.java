@@ -11,19 +11,17 @@ public class Flight {
     private LocalDate day;
     private int price;
     private int flightDuration;
-    private final LocalDateTime departureTime = LocalDateTime.now();
-    private int arrivalTime;
+    private int departureTime;
     private int availableSeats;
-    private int reservedSeats;
-    private Seat[] seats;
 
-    public Flight(String flightNumber, String departureCity, String arrivalCity, LocalDate day, int price, int flightDuration) {
+    public Flight(String flightNumber, String departureCity, String arrivalCity, LocalDate day, int price, int flightDuration, int departureTime) {
         this.flightNumber = flightNumber;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
         this.day = day;
         this.price = price;
         this.flightDuration = flightDuration;
+        this.departureTime = departureTime;
     }
 
     public int getFlightDuration() {
@@ -34,13 +32,6 @@ public class Flight {
         this.flightDuration = flightDuration;
     }
 
-    public Seat[] getSeats() {
-        return seats;
-    }
-
-    public void setSeats(Seat[] seats) {
-        this.seats = seats;
-    }
     public String getFlightNumber() {
         return flightNumber;
     }
@@ -89,17 +80,14 @@ public class Flight {
         this.availableSeats = availableSeats;
     }
 
-    public int getReservedSeats() {
-        return reservedSeats;
-    }
-
-    public void setReservedSeats(int reservedSeats) {
-        this.reservedSeats = reservedSeats;
+    public int getDepartureTime() {
+        return departureTime;
     }
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return flightNumber + ": " + departureCity + " << " + arrivalCity + " << " + day.format(formatter)
-                + "\n " + "Price " + price + " ISK " + "\n " + "Flight duration " + flightDuration + " hours";
+                + "\n " + "Price " + price + " ISK " + "\n " + "Flight duration " + flightDuration + " hours"
+                + "\n"  + "Departure time " + departureTime + " hours";
     }
 }
