@@ -34,10 +34,10 @@
             <Label text="Last name" GridPane.rowIndex="1" />
             <Label text="Phone" GridPane.rowIndex="2" />
             <Label text="SSN" GridPane.rowIndex="3" />
-            <TextField fx:id="firstName" GridPane.columnIndex="1" />
-            <TextField fx:id="lastName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="phone" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="ssn" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="fxFirstName" GridPane.columnIndex="1" />
+            <TextField fx:id="fxLastName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="fxPhone" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="fxSSN" GridPane.columnIndex="1" GridPane.rowIndex="3" />
          </children>
       </GridPane>
    </children>
