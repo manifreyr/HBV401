@@ -21,7 +21,7 @@ public class ReturnController {
 
     private final FlightController flightController = new FlightController();
     public void nextScene(ActionEvent event){
-        ViewSwitcher.switchTo(View.FINAL);
+        ViewSwitcher.switchTo(View.DETAIL);
     }
     public void pastScene(ActionEvent event){
         ViewSwitcher.switchTo(View.FLIGHT);

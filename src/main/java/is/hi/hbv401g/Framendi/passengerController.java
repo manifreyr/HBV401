@@ -1,5 +1,7 @@
 package is.hi.hbv401g.Framendi;
 
+import is.hi.hbv401g.Bakendi.User;
+import is.hi.hbv401g.Bakendi.UserRepository;
 import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,28 +19,30 @@ import java.util.ArrayList;
 public class passengerController {
 
     @FXML
-    private TextField firstName;
+    private TextField fxFirstName;
     @FXML
-    private TextField lastName;
+    private TextField fxLastName;
     @FXML
-    private TextField phone;
+    private TextField fxPhone;
     @FXML
-    private TextField ssn;
+    private TextField fxSSN;
+    private User addedUser;
+
+    private final UserRepository userRepository= new UserRepository();
 
     @FXML
     void saveUserInfo(ActionEvent event) {
-
-        String first = firstName.getText();
-        String last = lastName.getText();
-        String phoneNumber = phone.getText();
-        String ssnNumber = ssn.getText();
-
-
+        User user = new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText());
+        userRepository.addUser(user);
+        addedUser = user;
         ViewSwitcher.switchTo(View.FINAL);
     }
     @FXML
     void pastScene(ActionEvent event){
         ViewSwitcher.switchTo(View.FLIGHT);
+    }
+    public User getAddedUser(){
+        return addedUser;
     }
 }
 
