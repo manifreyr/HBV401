@@ -1,9 +1,7 @@
 package is.hi.hbv401g.Bakendi;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +18,7 @@ public class BookingRepository {
                 Booking booking = new Booking(
                         resultSet.getString("userSSNo"),
                         resultSet.getString("flightNumber"),
-                        resultSet.getDate("day").toLocalDate(),
+                        resultSet.getDate("flightDay").toLocalDate(),
                         resultSet.getString("seatID")
                 );
                 bookingList.add(booking);
@@ -30,10 +28,12 @@ public class BookingRepository {
         }
         return bookingList;
     }
+
     public void addBooking(Booking booking) {
         String sql = "INSERT INTO Bookings VALUES (?, ?, ?, ?)";
         sqlConnection(booking, sql);
     }
+
     public void deleteBooking(Booking booking) {
         String sql = "DELETE FROM Bookings WHERE seatID = ? AND userSSNo = ? AND flightNumber = ? AND flightDay = ?";
         sqlConnection(booking, sql);
@@ -44,7 +44,7 @@ public class BookingRepository {
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(2, booking.getUserID());
             preparedStatement.setString(3, booking.getFlightID());
-            preparedStatement.setDate(4, java.sql.Date.valueOf(booking.getFlightDay()));
+            preparedStatement.setDate(4, Date.valueOf(booking.getFlightDay()));
             preparedStatement.setString(1, booking.getSeat());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -52,15 +52,8 @@ public class BookingRepository {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         BookingRepository bookingRepository = new BookingRepository();
-        try {
-            List<Booking> bookings = bookingRepository.getAllBookings();
-            for (Booking booking : bookings) {
-                System.out.println(booking);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        System.out.print(bookingRepository.getAllBookings());
     }
 }

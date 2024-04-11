@@ -1,7 +1,6 @@
 package is.hi.hbv401g.Bakendi;
 
 public class User {
-    //private Booking[] bookings;
     private String userID;
     private String userPhone;
     private String firstName;

@@ -18,6 +18,7 @@ public class FlightControllerTest {
     private FlightController flightController;
     private Flight flight;
 
+
     @Before
     public void setUp() throws SQLException {
         this.flightController = new FlightController();

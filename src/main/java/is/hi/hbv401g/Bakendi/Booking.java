@@ -1,5 +1,6 @@
 package is.hi.hbv401g.Bakendi;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 public class Booking {
@@ -44,6 +45,15 @@ public class Booking {
 
     public void setSeat(String seat) {
         this.seat = seat;
+    }
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "userID='" + userID + '\'' +
+                ", flightID='" + flightID + '\'' +
+                ", flightDay=" + flightDay +
+                ", seat='" + seat + '\'' +
+                '}';
     }
 
 
