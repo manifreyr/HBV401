@@ -45,7 +45,7 @@ public class FlightListController {
     public void sortDefault(ActionEvent event) throws SQLException {
         fxSort.setText("Sort by");
         fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
-        ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getReturnConnect()));
+        ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getOutBoundConnect()));
         fxFlights.setItems(flightObservableList);
     }
 
