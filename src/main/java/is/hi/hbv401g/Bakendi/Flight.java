@@ -83,12 +83,7 @@ public class Flight {
     public int getDepartureTime() {
         return departureTime;
     }
-    public void decreaseAvailableSeats(){
-        --availableSeats;
-    }
-    public void increaseAvailableSeats(){
-        ++availableSeats;
-    }
+
     public String displayDepartureTime(){
         if (departureTime < 10) {
             return "0" + departureTime + ":00";
@@ -104,4 +99,6 @@ public class Flight {
                 + "\n"  + "Departure time " + displayDepartureTime() + " hours"
                 + "\n" + "Available seats " + availableSeats;
     }
+
+
 }

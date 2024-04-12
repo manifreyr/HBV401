@@ -55,10 +55,32 @@ public class FlightRepository {
             throw new RuntimeException(e);
         }
     }
+    public void decreaseAvailableSeats(Flight flight) {
+        String sql = "UPDATE Flight SET availableSeats = availableSeats - 1 WHERE flightNumber = ?";
+        try (Connection conn = DatabaseConnector.connect();
+             PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setString(1, flight.getFlightNumber());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void increaseAvailableSeats(Flight flight) {
+        String sql = "UPDATE Flight SET availableSeats = availableSeats + 1 WHERE flightNumber = ?";
+        try (Connection conn = DatabaseConnector.connect();
+             PreparedStatement preparedStatement = conn.prepareStatement(sql)) {
+            preparedStatement.setString(1, flight.getFlightNumber());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         FlightRepository flightRepository = new FlightRepository();
+        List<Flight> listi = flightRepository.getAllFlights();
+        flightRepository.decreaseAvailableSeats(listi.get(0));
         try {
             List<Flight> flights = flightRepository.getAllFlights();
             for (Flight flight : flights) {
