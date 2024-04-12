@@ -26,6 +26,10 @@ public class passengerController {
         userRepository.addUser(user);
         addedUser = user;
         ViewSwitcher.switchTo(View.FINAL);
+        addUser();
+    }
+    void addUser(){
+        userRepository.addUser(addedUser);
     }
     @FXML
     void pastScene(ActionEvent event){
