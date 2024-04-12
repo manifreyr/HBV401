@@ -1,10 +1,15 @@
 package is.hi.hbv401g.Framendi;
 
+import is.hi.hbv401g.Bakendi.BookingController;
+import is.hi.hbv401g.Bakendi.BookingRepository;
+import is.hi.hbv401g.Bakendi.FlightRepository;
 import is.hi.hbv401g.Bakendi.UserRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+
+import java.sql.SQLException;
 
 public class FinalOneWayController {
     @FXML
@@ -29,7 +34,10 @@ public class FinalOneWayController {
     private Label fxTotalPrice;
     private passengerController pController;
     private FlightListController fController;
+    private BookingController bookingController = new BookingController();
     private UserRepository userRepository = new UserRepository();
+    private FlightRepository flightRepository = new FlightRepository();
+
 
     public void initialize(){
         pController = (passengerController) ViewSwitcher.lookup(View.DETAIL);
@@ -53,6 +61,12 @@ public class FinalOneWayController {
     }
     public void nextScene(ActionEvent event){
         userRepository.addUser(pController.getAddedUser());
+        flightRepository.decreaseAvailableSeats(fController.getSelectedOutBoundFlight());
+        bookingController.createBooking(fController.getSelectedOutBoundFlight(), pController.getAddedUser());
+    }
+    public static void main(String[] args) throws SQLException {
+        BookingRepository bookingRepository = new BookingRepository();
+        System.out.println(bookingRepository.getAllBookings());
 
     }
 }
