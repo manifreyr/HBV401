@@ -18,10 +18,14 @@ public class FlightListController {
     @FXML
     private MenuButton fxSort;
     private final FlightController flightController = new FlightController();
+    private Flight selectedOutBoundFlight;
     public void initialize() throws SQLException {
         fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getOutBoundConnect()));
         fxFlights.setItems(flightObservableList);
+        fxFlights.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            selectedOutBoundFlight = newValue;
+        });
     }
     public void nextScene(ActionEvent event){
         if(fController.isCheckBoxSelected()) {
@@ -52,6 +56,9 @@ public class FlightListController {
         fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getOutBoundConnect()));
         fxFlights.setItems(flightObservableList);
+    }
+    public Flight getSelectedOutBoundFlight(){
+        return selectedOutBoundFlight;
     }
 
 }

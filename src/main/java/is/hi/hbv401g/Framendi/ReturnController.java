@@ -18,6 +18,7 @@ public class ReturnController {
     private ListView<Flight> fxFlights;
     @FXML
     private MenuButton fxSort;
+    private Flight selectedReturnFlight;
 
     private final FlightController flightController = new FlightController();
     public void nextScene(ActionEvent event){
@@ -30,6 +31,9 @@ public class ReturnController {
         fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getReturnConnect()));
         fxFlights.setItems(flightObservableList);
+        fxFlights.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            selectedReturnFlight = newValue;
+        });
     }
     public void sortLowHigh(ActionEvent event){
         fxSort.setText("Price: Low to high");
@@ -49,6 +53,9 @@ public class ReturnController {
         fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getReturnConnect()));
         fxFlights.setItems(flightObservableList);
+    }
+    public Flight getSelectedReturnFlight(){
+        return selectedReturnFlight;
     }
 
 }

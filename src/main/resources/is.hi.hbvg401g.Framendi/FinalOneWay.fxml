@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.OverViewController">
+<AnchorPane prefHeight="400.0" prefWidth="360.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.FinalOneWayController">
     <children>
         <Label layoutX="119.0" layoutY="21.0" prefHeight="29.0" prefWidth="121.0" text="Booking overview">
             <font>
@@ -37,20 +37,20 @@
                </font></Text>
                 <Text layoutX="3.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight number:" />
                 <Text layoutX="2.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Duration:" />
-                <Label fx:id="fxOutboundNr" layoutX="86.0" layoutY="32.0" prefHeight="17.0" prefWidth="49.0" text="Label" />
-                <Label fx:id="fxOutboundDur" layoutX="57.0" layoutY="58.0" prefHeight="17.0" prefWidth="74.0" text="Label" />
-                <Label fx:id="fxOutboundDep" layoutX="216.0" layoutY="32.0" prefHeight="17.0" prefWidth="85.0" text="Label" />
-                <Label fx:id="fxOutboundArr" layoutX="203.0" layoutY="58.0" prefHeight="17.0" prefWidth="85.0" text="Label" />
+                <Label fx:id="fxOutBoundNr" layoutX="86.0" layoutY="32.0" prefHeight="17.0" prefWidth="49.0" text="Label" />
+                <Label fx:id="fxOutBoundDur" layoutX="57.0" layoutY="58.0" prefHeight="17.0" prefWidth="74.0" text="Label" />
+                <Label fx:id="fxOutBoundDep" layoutX="216.0" layoutY="32.0" prefHeight="17.0" prefWidth="85.0" text="Label" />
+                <Label fx:id="fxOutBoundArr" layoutX="203.0" layoutY="58.0" prefHeight="17.0" prefWidth="85.0" text="Label" />
                 <Text layoutX="135.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departure city:" wrappingWidth="85.41796875" />
                 <Text layoutX="135.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival city: " wrappingWidth="66.052734375" />
                 <Text layoutX="2.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date: " />
                 <Text layoutX="136.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" wrappingWidth="48.87890625" />
-                <Label fx:id="fxOutboundPrice" layoutX="173.0" layoutY="82.0" prefHeight="17.0" prefWidth="85.0" text="Label" />
-                <Label fx:id="fxOutboundDate" layoutX="33.0" layoutY="82.0" prefHeight="17.0" prefWidth="95.0" text="Label" />
+                <Label fx:id="fxOutBoundPrice" layoutX="173.0" layoutY="82.0" prefHeight="17.0" prefWidth="85.0" text="Label" />
+                <Label fx:id="fxOutBoundDate" layoutX="33.0" layoutY="82.0" prefHeight="17.0" prefWidth="95.0" text="Label" />
             </children>
         </Pane>
-        <Button fx:id="fxConfirm" layoutX="228.0" layoutY="360.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Confirm booking" />
-        <Button fx:id="fxBack" layoutX="180.0" layoutY="360.0" mnemonicParsing="false" text="Back" />
+        <Button fx:id="fxConfirm" onAction="#nextScene" layoutX="228.0" layoutY="360.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Confirm booking" />
+        <Button fx:id="fxBack" onAction="#pastScene" layoutX="180.0" layoutY="360.0" mnemonicParsing="false" text="Back" />
         <Text layoutX="19.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
         <Label fx:id="fxTotalPrice" layoutX="54.0" layoutY="364.0" prefHeight="17.0" prefWidth="85.0" text="Label" />
         <Text layoutX="128.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISK." />
