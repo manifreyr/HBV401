@@ -26,9 +26,7 @@ public class passengerController {
 
     @FXML
     void saveUserInfo(ActionEvent event) {
-        User user = new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText());
-        userRepository.addUser(user);
-        addedUser = user;
+        addedUser = new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText());
         if(fController.isCheckBoxSelected()){
             ViewSwitcher.switchTo(View.FINALRETURN);
         }

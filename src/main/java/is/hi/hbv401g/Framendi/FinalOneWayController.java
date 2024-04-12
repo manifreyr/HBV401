@@ -1,5 +1,6 @@
 package is.hi.hbv401g.Framendi;
 
+import is.hi.hbv401g.Bakendi.UserRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -28,6 +29,7 @@ public class FinalOneWayController {
     private Label fxTotalPrice;
     private passengerController pController;
     private FlightListController fController;
+    private UserRepository userRepository = new UserRepository();
 
     public void initialize(){
         pController = (passengerController) ViewSwitcher.lookup(View.DETAIL);
@@ -50,6 +52,7 @@ public class FinalOneWayController {
         ViewSwitcher.switchTo(View.DETAIL);
     }
     public void nextScene(ActionEvent event){
+        userRepository.addUser(pController.getAddedUser());
 
     }
 }

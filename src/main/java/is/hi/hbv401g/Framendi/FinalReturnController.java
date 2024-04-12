@@ -1,5 +1,6 @@
 package is.hi.hbv401g.Framendi;
 
+import is.hi.hbv401g.Bakendi.UserRepository;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -41,6 +42,7 @@ public class FinalReturnController {
     private passengerController pController;
     private FlightListController fController;
     private ReturnController rController;
+    private UserRepository userRepository = new UserRepository();
 
     public void initialize(){
         pController = (passengerController) ViewSwitcher.lookup(View.DETAIL);
@@ -75,7 +77,7 @@ public class FinalReturnController {
         ViewSwitcher.switchTo(View.DETAIL);
     }
     public void nextScene(ActionEvent event){
-
+        userRepository.addUser(pController.getAddedUser());
     }
 
 }
