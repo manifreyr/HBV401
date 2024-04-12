@@ -57,6 +57,9 @@ public class forsidaController {
     public FlightConnect getReturnConnect(){
         return returnConnect;
     }
+    public boolean isCheckBoxSelected(){
+        return fxCheckbox.isSelected();
+    }
 
 
 }

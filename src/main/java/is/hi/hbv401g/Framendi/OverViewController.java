@@ -11,6 +11,5 @@ public class OverViewController {
 
     public void initialize(){
         controller = (passengerController) ViewSwitcher.lookup(View.DETAIL);
-        fxUser.setText(controller.getAddedUser().toString());
     }
 }
