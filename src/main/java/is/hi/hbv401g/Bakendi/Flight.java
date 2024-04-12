@@ -83,11 +83,18 @@ public class Flight {
     public int getDepartureTime() {
         return departureTime;
     }
+    public String displayDepartureTime(){
+        if (departureTime < 10) {
+            return "0" + departureTime + ":00";
+        }else {
+            return departureTime + ":00";
+        }
+    }
     @Override
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return flightNumber + ": " + departureCity + " << " + arrivalCity + " << " + day.format(formatter)
                 + "\n " + "Price " + price + " ISK " + "\n " + "Flight duration " + flightDuration + " hours"
-                + "\n"  + "Departure time " + departureTime + " hours";
+                + "\n"  + "Departure time " + displayDepartureTime() + " hours";
     }
 }
