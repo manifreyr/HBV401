@@ -134,12 +134,19 @@ public class FlightController {
         }
         return null;
     }
+    public List<Flight> sortFlightsByTime(List<Flight> flights) {
+        flights.sort(Comparator.comparing(Flight::getDepartureTime));
+        return flights;
+    }
 
 
     public static void main(String[] args) throws SQLException {
-        FlightConnect flightConnect = new FlightConnect("New York", "Reykjavik", LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 1));
         FlightController flightController = new FlightController();
-        System.out.print(flightController.returnAvailableFlights(flightConnect));
+        List<Flight> flights = flightController.getAllFlights();
+        flightController.sortFlightsByTime(flights);
+        for (Flight flight : flights) {
+            System.out.println(flight);
+        }
     }
 
 }
