@@ -1,5 +1,6 @@
 package is.hi.hbv401g.Framendi;
 
+import is.hi.hbv401g.Bakendi.Flight;
 import is.hi.hbv401g.Bakendi.FlightController;
 import is.hi.hbv401g.Bakendi.FlightConnect;
 import javafx.collections.FXCollections;
@@ -60,6 +61,5 @@ public class forsidaController {
     public boolean isCheckBoxSelected(){
         return fxCheckbox.isSelected();
     }
-
 
 }

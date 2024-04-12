@@ -1,10 +1,12 @@
 package is.hi.hbv401g.Framendi;
 
-import is.hi.hbv401g.Bakendi.User;
-import is.hi.hbv401g.Bakendi.UserRepository;
+import is.hi.hbv401g.Bakendi.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+
+import java.sql.SQLException;
+import java.util.List;
 
 public class passengerController {
 
@@ -20,6 +22,7 @@ public class passengerController {
     private forsidaController fController;
 
     private final UserRepository userRepository= new UserRepository();
+
     public void initialize(){
         fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
     }
