@@ -24,12 +24,7 @@ public class FlightListController {
         fxFlights.setItems(flightObservableList);
     }
     public void nextScene(ActionEvent event){
-        if(fController.isCheckBoxSelected()) {
-            ViewSwitcher.switchTo(View.RETURN);
-        }
-        else{
-            ViewSwitcher.switchTo(View.DETAIL);
-        }
+        ViewSwitcher.switchTo(View.RETURN);
     }
     public void pastScene(ActionEvent event){
         ViewSwitcher.switchTo(View.OPNA);
