@@ -6,7 +6,8 @@ public enum View {
     DETAIL("/is.hi.hbvg401g.Framendi/passenger.fxml"),
     FLIGHT("/is.hi.hbvg401g.Framendi/Flights.fxml"),
     RETURN("/is.hi.hbvg401g.Framendi/ReturnFlight.fxml"),
-    FINAL("/is.hi.hbvg401g.Framendi/Final.fxml");
+    FINALRETURN("/is.hi.hbvg401g.Framendi/FinalReturn.fxml"),
+    FINALONEWAY("/is.hi.hbvg401g.Framendi/FinalOneWay.fxml");
 
 
     private String fileName;

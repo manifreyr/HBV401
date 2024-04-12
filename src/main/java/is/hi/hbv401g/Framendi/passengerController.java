@@ -17,15 +17,24 @@ public class passengerController {
     @FXML
     private TextField fxSSN;
     private User addedUser;
+    private forsidaController fController;
 
     private final UserRepository userRepository= new UserRepository();
+    public void initialize(){
+        fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
+    }
 
     @FXML
     void saveUserInfo(ActionEvent event) {
         User user = new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText());
         userRepository.addUser(user);
         addedUser = user;
-        ViewSwitcher.switchTo(View.FINAL);
+        if(fController.isCheckBoxSelected()){
+            ViewSwitcher.switchTo(View.FINALRETURN);
+        }
+        else{
+            ViewSwitcher.switchTo(View.FINALONEWAY);
+        }
     }
     @FXML
     void pastScene(ActionEvent event){
