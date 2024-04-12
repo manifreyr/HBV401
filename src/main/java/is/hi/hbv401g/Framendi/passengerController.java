@@ -2,19 +2,9 @@ package is.hi.hbv401g.Framendi;
 
 import is.hi.hbv401g.Bakendi.User;
 import is.hi.hbv401g.Bakendi.UserRepository;
-import javafx.beans.Observable;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.VBox;
-import org.w3c.dom.Text;
-
-import javax.swing.*;
-import java.util.ArrayList;
 
 public class passengerController {
 

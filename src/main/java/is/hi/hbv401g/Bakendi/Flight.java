@@ -1,7 +1,6 @@
 package is.hi.hbv401g.Bakendi;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Flight {
@@ -14,7 +13,7 @@ public class Flight {
     private int departureTime;
     private int availableSeats;
 
-    public Flight(String flightNumber, String departureCity, String arrivalCity, LocalDate day, int price, int flightDuration, int departureTime) {
+    public Flight(String flightNumber, String departureCity, String arrivalCity, LocalDate day, int price, int flightDuration, int departureTime, int availableSeats) {
         this.flightNumber = flightNumber;
         this.departureCity = departureCity;
         this.arrivalCity = arrivalCity;
@@ -22,6 +21,7 @@ public class Flight {
         this.price = price;
         this.flightDuration = flightDuration;
         this.departureTime = departureTime;
+        this.availableSeats = availableSeats;
     }
 
     public int getFlightDuration() {
@@ -83,6 +83,12 @@ public class Flight {
     public int getDepartureTime() {
         return departureTime;
     }
+    public void decreaseAvailableSeats(){
+        --availableSeats;
+    }
+    public void increaseAvailableSeats(){
+        ++availableSeats;
+    }
     public String displayDepartureTime(){
         if (departureTime < 10) {
             return "0" + departureTime + ":00";
@@ -95,6 +101,7 @@ public class Flight {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return flightNumber + ": " + departureCity + " << " + arrivalCity + " << " + day.format(formatter)
                 + "\n " + "Price " + price + " ISK " + "\n " + "Flight duration " + flightDuration + " hours"
-                + "\n"  + "Departure time " + displayDepartureTime() + " hours";
+                + "\n"  + "Departure time " + displayDepartureTime() + " hours"
+                + "\n" + "Available seats " + availableSeats;
     }
 }

@@ -23,7 +23,8 @@ public class FlightRepository {
                     LocalDate.parse(resultSet.getString("day")),
                     resultSet.getInt("price"),
                     resultSet.getInt("flightDuration"),
-                    resultSet.getInt("departureTime"));
+                    resultSet.getInt("departureTime"),
+                    resultSet.getInt("availableSeats"));
             flightList.add(flight);
             }
 
