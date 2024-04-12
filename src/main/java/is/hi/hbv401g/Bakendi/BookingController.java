@@ -22,4 +22,8 @@ public class BookingController {
     public void addUser(User user) {
         userRepository.addUser(user);
     }
+    public void createBooking(Flight flight, User user){
+        Booking booking = new Booking(user.getUserID(), flight.getFlightNumber(), flight.getDay(), "ab");
+        addBooking(booking);
+    }
 }

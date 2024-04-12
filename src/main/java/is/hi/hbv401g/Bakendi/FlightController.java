@@ -113,6 +113,7 @@ public class FlightController {
         }
         return arrivals;
     }
+
     public List<Flight> returnAvailableFlights(FlightConnect flightConnect) throws SQLException {
         List<Flight> availableFlights = new ArrayList<>();
         for (Flight flight : flightRepository.getAllFlights()) {
@@ -122,6 +123,19 @@ public class FlightController {
         }
         return availableFlights;
     }
+
+    public Flight getFlightByInput(String departureCity, String arrivalCity, LocalDate departureDate) throws SQLException {
+        for (Flight flight : flightRepository.getAllFlights()) {
+            if (flight.getDepartureCity().equals(departureCity) &&
+                    flight.getArrivalCity().equals(arrivalCity)
+                    && flight.getDay().equals(departureDate)) {
+                return flight;
+            }
+        }
+        return null;
+    }
+
+
     public static void main(String[] args) throws SQLException {
         FlightConnect flightConnect = new FlightConnect("New York", "Reykjavik", LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 1));
         FlightController flightController = new FlightController();
