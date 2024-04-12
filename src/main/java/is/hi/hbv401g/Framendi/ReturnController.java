@@ -54,6 +54,12 @@ public class ReturnController {
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getReturnConnect()));
         fxFlights.setItems(flightObservableList);
     }
+    public void sortDeparture(ActionEvent event) throws SQLException {
+        fxSort.setText("Departure time");
+        ObservableList<Flight> currentFlights = fxFlights.getItems();
+        ObservableList<Flight> sortedFlights = FXCollections.observableArrayList(flightController.sortFlightsByTime(currentFlights));
+        fxFlights.setItems(sortedFlights);
+    }
     public Flight getSelectedReturnFlight(){
         return selectedReturnFlight;
     }
