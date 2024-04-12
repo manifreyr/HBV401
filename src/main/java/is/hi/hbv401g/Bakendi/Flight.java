@@ -101,7 +101,7 @@ public class Flight {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return flightNumber + ": " + departureCity + " << " + arrivalCity + " << " + day.format(formatter)
                 + "\n " + "Price " + price + " ISK " + "\n " + "Flight duration " + flightDuration + " hours"
-                + "\n"  + "Departure time " + displayDepartureTime() + " hours"
+                + "\n"  + "Departure time " + displayDepartureTime()
                 + "\n" + "Available seats " + availableSeats;
     }
 }
