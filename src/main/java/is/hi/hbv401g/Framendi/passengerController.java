@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class passengerController {
@@ -18,7 +19,7 @@ public class passengerController {
     private TextField fxPhone;
     @FXML
     private TextField fxSSN;
-    private List<User> addedUsers;
+    private List<User> addedUsers = new ArrayList<>();
     private forsidaController fController;
 
     private final UserRepository userRepository= new UserRepository();
@@ -31,10 +32,9 @@ public class passengerController {
 
     @FXML
     void saveUserInfo(ActionEvent event) {
-        if(addedUsers.isEmpty()){
-            addedUsers.add(new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText()));
-            passengerCounter++;
-        }
+        addedUsers.add(new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText()));
+        passengerCounter++;
+
         if(fController.isCheckBoxSelected()){
             ViewSwitcher.switchTo(View.FINALRETURN);
         }

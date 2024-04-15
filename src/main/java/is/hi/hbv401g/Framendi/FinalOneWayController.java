@@ -3,10 +3,7 @@ package is.hi.hbv401g.Framendi;
 import is.hi.hbv401g.Bakendi.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
+import javafx.scene.control.*;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -39,6 +36,7 @@ public class FinalOneWayController {
     private BookingController bookingController = new BookingController();
     private UserRepository userRepository = new UserRepository();
     private FlightRepository flightRepository = new FlightRepository();
+    private BookingRepository bookingRepository = new BookingRepository();
     private List<User> users;
 
 
@@ -48,6 +46,7 @@ public class FinalOneWayController {
         fController = (FlightListController) ViewSwitcher.lookup(View.FLIGHT);
         users = pController.getAddedUsers();
         setData();
+        System.out.println(users.size());
         for(int i=1; i<=users.size(); i++){
             MenuItem item = new MenuItem(String.valueOf(i));
             item.setOnAction(event -> changeUser(item));
@@ -76,8 +75,28 @@ public class FinalOneWayController {
             flightRepository.decreaseAvailableSeats(fController.getSelectedOutBoundFlight());
             bookingController.createBooking(fController.getSelectedOutBoundFlight(), user);
         }
+        dialog();
+    }
+    public void dialog(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Booking Confirmation");
+        alert.setHeaderText(null);  // No header text
+        alert.setContentText(dialogText());
 
-
+        alert.showAndWait();
+    }
+    public String dialogText() {
+        StringBuilder message = new StringBuilder();
+        if (users.size() == 1) {
+            message.append(users.get(0).getUserName()).append("\n").append("Booking ID: ")
+                    .append(bookingRepository.getBookingByBookingID().getBookingID());
+        } else {
+            for (User user : users) {
+                message.append(users.get(0).getUserName()).append("\n").append("Booking ID: ")
+                        .append(bookingRepository.getBookingByBookingID().getBookingID()).append("\n");
+            }
+        }
+        return message.toString();
     }
     public void changeUser(MenuItem item){
         fxName.setText(users.get(Integer.parseInt(item.getText()) - 1).getFirstName() + " " + users.get(Integer.parseInt(item.getText()) - 1).getLastName());
