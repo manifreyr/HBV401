@@ -46,6 +46,8 @@ public class Booking {
         return bookingID;
     }
     public String toString() {
-        return  userRepository.getUserBySSNo(userID)+ " " + flightID + " " + flightDay + " " + bookingID;
+        return  "Passenger: " + userRepository.getUserBySSNo(userID)+
+                "\n Flight: " + flightID + flightDay +
+                "\n"  + "Booking id: " + bookingID;
     }
 }
