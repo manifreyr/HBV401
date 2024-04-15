@@ -41,11 +41,10 @@ public class Booking {
     }
 
 
+    public String getBookingID() {
+        return bookingID;
+    }
     public String toString() {
         return bookingID;
     }
-
-
-
-
 }

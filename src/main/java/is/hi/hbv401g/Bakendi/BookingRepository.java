@@ -45,7 +45,7 @@ public class BookingRepository {
             preparedStatement.setString(2, booking.getUserID());
             preparedStatement.setString(3, booking.getFlightID());
             preparedStatement.setDate(4, Date.valueOf(booking.getFlightDay()));
-            preparedStatement.setString(1, booking.getSeat());
+            preparedStatement.setString(1, booking.getBookingID());
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
