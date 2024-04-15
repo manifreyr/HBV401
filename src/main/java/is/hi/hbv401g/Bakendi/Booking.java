@@ -10,6 +10,7 @@ public class Booking {
 
     private String bookingID;
 
+    private UserRepository userRepository = new UserRepository();
 
     public Booking(String userID, String flightID, LocalDate flightDay, String bookingID) {
         this.userID = userID;
@@ -45,6 +46,8 @@ public class Booking {
         return bookingID;
     }
     public String toString() {
-        return bookingID;
+        return  "Passenger: " + userRepository.getUserBySSNo(userID)+
+                "\n Flight: " + flightID + flightDay +
+                "\n"  + "Booking id: " + bookingID;
     }
 }

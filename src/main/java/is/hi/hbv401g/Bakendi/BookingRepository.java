@@ -72,4 +72,29 @@ public class BookingRepository {
         }
         return bookingList;
     }
+    public Booking getbookingByBookingID(String bookingID) {
+        String sql = "SELECT * FROM Bookings WHERE bookingID = ?";
+        Booking booking = null;
+        try (Connection connection = DatabaseConnector.connect();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, bookingID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                booking = new Booking(
+                        resultSet.getString("userSSNo"),
+                        resultSet.getString("flightNumber"),
+                        resultSet.getDate("flightDay").toLocalDate(),
+                        resultSet.getString("bookingID")
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return booking;
+    }
+    public static void main(String[] args) throws SQLException {
+        BookingRepository bookingRepository = new BookingRepository();
+        Booking booking = bookingRepository.getbookingByBookingID("OG1212024-06-011709982359");
+        System.out.println(booking);
+    }
 }
