@@ -18,18 +18,23 @@ public class passengerController {
     private TextField fxPhone;
     @FXML
     private TextField fxSSN;
-    private User addedUser;
+    private List<User> addedUsers;
     private forsidaController fController;
 
     private final UserRepository userRepository= new UserRepository();
+    private int passengerCounter;
 
     public void initialize(){
         fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
+        passengerCounter = 0;
     }
 
     @FXML
     void saveUserInfo(ActionEvent event) {
-        addedUser = new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText());
+        if(addedUsers.isEmpty()){
+            addedUsers.add(new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText()));
+            passengerCounter++;
+        }
         if(fController.isCheckBoxSelected()){
             ViewSwitcher.switchTo(View.FINALRETURN);
         }
@@ -41,8 +46,22 @@ public class passengerController {
     void pastScene(ActionEvent event){
         ViewSwitcher.switchTo(View.FLIGHT);
     }
-    public User getAddedUser(){
-        return addedUser;
+    public void addPassenger(ActionEvent event){
+        addedUsers.add(new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText()));
+        reset();
+        passengerCounter++;
+    }
+    public List<User> getAddedUsers(){
+        return addedUsers;
+    }
+    public void reset(){
+        fxPhone.setText("");
+        fxSSN.setText("");
+        fxFirstName.setText("");
+        fxLastName.setText("");
+    }
+    public int getNumPassengers(){
+        return passengerCounter;
     }
 }
 

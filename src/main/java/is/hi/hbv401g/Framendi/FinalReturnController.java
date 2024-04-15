@@ -76,7 +76,7 @@ public class FinalReturnController {
     public void pastScene(ActionEvent event){
         ViewSwitcher.switchTo(View.DETAIL);
     }
-    public void nextScene(ActionEvent event){
+    public void confirm(ActionEvent event){
         userRepository.addUser(pController.getAddedUser());
     }
 
