@@ -51,9 +51,25 @@ public class BookingRepository {
             e.printStackTrace();
         }
     }
-
-    public static void main(String[] args) throws SQLException {
-        BookingRepository bookingRepository = new BookingRepository();
-        System.out.print(bookingRepository.getAllBookings());
+    public List<Booking> getBookingsByUserID(String userID) {
+        String sql = "SELECT * FROM Bookings WHERE userSSNo = ?";
+        List<Booking> bookingList = new ArrayList<>();
+        try (Connection connection = DatabaseConnector.connect();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, userID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Booking booking = new Booking(
+                        resultSet.getString("userSSNo"),
+                        resultSet.getString("flightNumber"),
+                        resultSet.getDate("flightDay").toLocalDate(),
+                        resultSet.getString("seatID")
+                );
+                bookingList.add(booking);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return bookingList;
     }
 }

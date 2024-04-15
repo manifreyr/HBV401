@@ -30,6 +30,26 @@ public class UserRepository {
         }
         return userList;
     }
+    public User getUserBySSNo(String SSNo) {
+        String sql = "SELECT * FROM User WHERE SSNo = ?";
+        User user = null;
+        try (Connection connection = DatabaseConnector.connect();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, SSNo);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                user = new User(
+                        resultSet.getString("SSNo"),
+                        resultSet.getString("phone"),
+                        resultSet.getString("firstName"),
+                        resultSet.getString("lastName")
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return user;
+    }
 
     public void addUser(User user) {
         String sql = "INSERT INTO User (SSNo, phone, firstName, lastName) VALUES (?, ?, ?, ?)";

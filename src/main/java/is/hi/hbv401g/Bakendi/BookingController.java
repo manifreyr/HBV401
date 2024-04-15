@@ -1,7 +1,7 @@
 package is.hi.hbv401g.Bakendi;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.List;
 
 public class BookingController {
@@ -13,8 +13,8 @@ public class BookingController {
     public void deleteBooking(Booking booking) {
         bookingRepository.deleteBooking(booking);
     }
-    public void getAllBookings() throws SQLException {
-        bookingRepository.getAllBookings();
+    public List<Booking> getAllBookings() throws SQLException {
+        return bookingRepository.getAllBookings();
     }
     public List<User> getAllUsers() throws SQLException {
         return userRepository.getAllUsers();
@@ -25,5 +25,10 @@ public class BookingController {
     public void createBooking(Flight flight, User user){
         Booking booking = new Booking(user.getUserID(), flight.getFlightNumber(), flight.getDay(), (flight.getFlightNumber())+flight.getDay()+user.getUserID());
         addBooking(booking);
+    }
+    public static void main(String[] args) throws SQLException {
+        BookingRepository bookingRepository1 = new BookingRepository();
+        bookingRepository1.getBookingsByUserID("1709982359");
+
     }
 }
