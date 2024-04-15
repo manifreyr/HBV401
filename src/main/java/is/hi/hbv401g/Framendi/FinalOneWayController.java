@@ -75,12 +75,12 @@ public class FinalOneWayController {
             userRepository.addUser(user);
         }
         flightRepository.decreaseAvailableSeats(fController.getSelectedOutBoundFlight());
+
     }
     public void changeUser(MenuItem item){
         fxName.setText(users.get(Integer.parseInt(item.getText()) - 1).getFirstName() + " " + users.get(Integer.parseInt(item.getText()) - 1).getLastName());
         fxPhone.setText(users.get(Integer.parseInt(item.getText()) - 1).getUserPhone());
         fxSSN.setText(users.get(Integer.parseInt(item.getText()) - 1).getUserID());
-
     }
     public static void main(String[] args) throws SQLException {
         BookingRepository bookingRepository = new BookingRepository();
