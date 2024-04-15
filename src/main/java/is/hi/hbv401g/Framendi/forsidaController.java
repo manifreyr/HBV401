@@ -1,18 +1,15 @@
 package is.hi.hbv401g.Framendi;
 
-import is.hi.hbv401g.Bakendi.Flight;
-import is.hi.hbv401g.Bakendi.FlightController;
-import is.hi.hbv401g.Bakendi.FlightConnect;
+import is.hi.hbv401g.Bakendi.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class forsidaController {
 
@@ -26,9 +23,17 @@ public class forsidaController {
     private ComboBox<String> fxFrom; //Listi með flugum
     @FXML
     private ComboBox<String> fxTo;
+    @FXML
+    private TextField fxSSN;
+    @FXML
+    private Button fxBookingSearch;
     private final FlightController flightController = new FlightController();
+    private BookingRepository bookingRepository = new BookingRepository();
     private FlightConnect outBoundConnect;
     private FlightConnect returnConnect;
+    private List<Booking> searchedBookings;
+    private String SSN;
+
 
     public void initialize() throws SQLException {
         ObservableList<String> departureObservableList = FXCollections.observableArrayList(flightController.getAllDepartures());
@@ -60,6 +65,14 @@ public class forsidaController {
     }
     public boolean isCheckBoxSelected(){
         return fxCheckbox.isSelected();
+    }
+    public void bookingSearch(ActionEvent event) throws SQLException {
+        SSN = fxSSN.getText();
+        searchedBookings = bookingRepository.getAllBookings();
+        ViewSwitcher.switchTo(View.BOOKINGSEARCH);
+    }
+    public List<Booking> getSearchedBookings(){
+        return searchedBookings;
     }
 
 }

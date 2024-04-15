@@ -3,6 +3,7 @@ package is.hi.hbv401g.Framendi;
 
 public enum View {
     OPNA("/is.hi.hbvg401g.Framendi/Forsida.fxml"),
+    BOOKINGSEARCH("/is.hi.hbvg401g.Framendi/BookingSearch.fxml"),
     DETAIL("/is.hi.hbvg401g.Framendi/passenger.fxml"),
     FLIGHT("/is.hi.hbvg401g.Framendi/Flights.fxml"),
     RETURN("/is.hi.hbvg401g.Framendi/ReturnFlight.fxml"),
