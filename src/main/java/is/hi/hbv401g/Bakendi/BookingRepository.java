@@ -19,7 +19,7 @@ public class BookingRepository {
                         resultSet.getString("userSSNo"),
                         resultSet.getString("flightNumber"),
                         resultSet.getDate("flightDay").toLocalDate(),
-                        resultSet.getString("seatID")
+                        resultSet.getString("bookingID")
                 );
                 bookingList.add(booking);
             }
@@ -35,7 +35,7 @@ public class BookingRepository {
     }
 
     public void deleteBooking(Booking booking) {
-        String sql = "DELETE FROM Bookings WHERE seatID = ? AND userSSNo = ? AND flightNumber = ? AND flightDay = ?";
+        String sql = "DELETE FROM Bookings WHERE bookingID = ? AND userSSNo = ? AND flightNumber = ? AND flightDay = ?";
         sqlConnection(booking, sql);
     }
 
@@ -63,7 +63,7 @@ public class BookingRepository {
                         resultSet.getString("userSSNo"),
                         resultSet.getString("flightNumber"),
                         resultSet.getDate("flightDay").toLocalDate(),
-                        resultSet.getString("seatID")
+                        resultSet.getString("bookingID")
                 );
                 bookingList.add(booking);
             }

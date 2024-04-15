@@ -68,7 +68,7 @@ public class forsidaController {
     }
     public void bookingSearch(ActionEvent event) throws SQLException {
         SSN = fxSSN.getText();
-        searchedBookings = bookingRepository.getAllBookings();
+        searchedBookings = bookingRepository.getBookingsByUserID(SSN);
         ViewSwitcher.switchTo(View.BOOKINGSEARCH);
     }
     public List<Booking> getSearchedBookings(){
