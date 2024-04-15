@@ -72,12 +72,13 @@ public class BookingRepository {
         }
         return bookingList;
     }
-    public Booking getbookingByBookingID(String bookingID) {
-        String sql = "SELECT * FROM Bookings WHERE bookingID = ?";
+    public Booking getBookingByFlightNrAndUserSSNo(String flightNumber, String userSSNo) {
+        String sql = "SELECT * FROM Bookings WHERE flightNumber = ? AND userSSNo = ?";
         Booking booking = null;
         try (Connection connection = DatabaseConnector.connect();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setString(1, bookingID);
+            preparedStatement.setString(1, flightNumber);
+            preparedStatement.setString(2, userSSNo);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 booking = new Booking(
@@ -94,7 +95,7 @@ public class BookingRepository {
     }
     public static void main(String[] args) throws SQLException {
         BookingRepository bookingRepository = new BookingRepository();
-        Booking booking = bookingRepository.getbookingByBookingID("OG1212024-06-011709982359");
+        Booking booking = bookingRepository.getBookingByFlightNrAndUserSSNo("OG121", "1709982359");
         System.out.println(booking);
     }
 }

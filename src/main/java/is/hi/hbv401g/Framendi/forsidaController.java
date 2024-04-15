@@ -74,5 +74,13 @@ public class forsidaController {
     public List<Booking> getSearchedBookings(){
         return searchedBookings;
     }
+    public void clear(){
+        fxDepartureDate.setValue(null);
+        fxArrivalDate.setValue(null);
+        fxFrom.getSelectionModel().clearSelection();
+        fxTo.getSelectionModel().clearSelection();
+        fxFrom.setPromptText("Outbound destination");
+        fxTo.setPromptText("Arrival destination");
+    }
 
 }

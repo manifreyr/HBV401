@@ -51,7 +51,7 @@
                 <Label fx:id="fxOutBoundDate" layoutX="33.0" layoutY="82.0" prefHeight="17.0" prefWidth="95.0" text="Label" />
             </children>
         </Pane>
-        <Button fx:id="fxConfirm" layoutX="228.0" layoutY="360.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Confirm booking" />
+        <Button fx:id="fxConfirm" onAction="#confirm" layoutX="228.0" layoutY="360.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" text="Confirm booking" />
         <Button fx:id="fxBack" layoutX="180.0" layoutY="360.0" mnemonicParsing="false" text="Back" />
         <Text layoutX="19.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Price:" />
         <Label fx:id="fxTotalPrice" layoutX="54.0" layoutY="364.0" prefHeight="17.0" prefWidth="85.0" text="Label" />

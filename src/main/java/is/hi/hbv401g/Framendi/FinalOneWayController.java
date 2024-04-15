@@ -33,6 +33,7 @@ public class FinalOneWayController {
     private MenuButton fxPassengerSelection;
     private passengerController pController;
     private FlightListController fController;
+    private forsidaController forsidaController;
     private BookingController bookingController = new BookingController();
     private UserRepository userRepository = new UserRepository();
     private FlightRepository flightRepository = new FlightRepository();
@@ -41,7 +42,7 @@ public class FinalOneWayController {
 
 
     public void initialize(){
-
+        forsidaController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
         pController = (passengerController) ViewSwitcher.lookup(View.DETAIL);
         fController = (FlightListController) ViewSwitcher.lookup(View.FLIGHT);
         users = pController.getAddedUsers();
@@ -76,24 +77,31 @@ public class FinalOneWayController {
             bookingController.createBooking(fController.getSelectedOutBoundFlight(), user);
         }
         dialog();
+
     }
     public void dialog(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Booking Confirmation");
         alert.setHeaderText(null);  // No header text
         alert.setContentText(dialogText());
-
+        alert.setOnHidden(evt -> frontPage());
         alert.showAndWait();
     }
     public String dialogText() {
         StringBuilder message = new StringBuilder();
+        if(users.size() == 1){
+            message.append("You have confirmed a booking for:").append("\n");
+        }
+        else{
+            message.append("You have confirmed bookings for:").append("\n");
+        }
         if (users.size() == 1) {
             message.append(users.get(0).getUserName()).append("\n").append("Booking ID: ")
-                    .append(bookingRepository.getBookingByBookingID().getBookingID());
+                    .append(bookingRepository.getBookingByFlightNrAndUserSSNo(fController.getSelectedOutBoundFlight().getFlightNumber(),users.get(0).getUserID()).getBookingID());
         } else {
             for (User user : users) {
-                message.append(users.get(0).getUserName()).append("\n").append("Booking ID: ")
-                        .append(bookingRepository.getBookingByBookingID().getBookingID()).append("\n");
+                message.append(user.getUserName()).append("\n").append("Booking ID: ")
+                        .append(bookingRepository.getBookingByFlightNrAndUserSSNo(fController.getSelectedOutBoundFlight().getFlightNumber(), user.getUserID()).getBookingID()).append("\n").append("\n");
             }
         }
         return message.toString();
@@ -102,6 +110,10 @@ public class FinalOneWayController {
         fxName.setText(users.get(Integer.parseInt(item.getText()) - 1).getFirstName() + " " + users.get(Integer.parseInt(item.getText()) - 1).getLastName());
         fxPhone.setText(users.get(Integer.parseInt(item.getText()) - 1).getUserPhone());
         fxSSN.setText(users.get(Integer.parseInt(item.getText()) - 1).getUserID());
+    }
+    public void frontPage(){
+        forsidaController.clear();
+        ViewSwitcher.switchTo(View.OPNA);
     }
     public static void main(String[] args) throws SQLException {
         BookingRepository bookingRepository = new BookingRepository();
