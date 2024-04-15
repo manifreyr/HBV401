@@ -26,9 +26,5 @@ public class BookingController {
         Booking booking = new Booking(user.getUserID(), flight.getFlightNumber(), flight.getDay(), (flight.getFlightNumber())+flight.getDay()+user.getUserID());
         addBooking(booking);
     }
-    public static void main(String[] args) throws SQLException {
-        BookingRepository bookingRepository1 = new BookingRepository();
-        bookingRepository1.getBookingsByUserID("1709982359");
 
-    }
 }
