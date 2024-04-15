@@ -73,8 +73,10 @@ public class FinalOneWayController {
     public void confirm(ActionEvent event){
         for(User user : users){
             userRepository.addUser(user);
+            flightRepository.decreaseAvailableSeats(fController.getSelectedOutBoundFlight());
+            bookingController.createBooking(fController.getSelectedOutBoundFlight(), user);
         }
-        flightRepository.decreaseAvailableSeats(fController.getSelectedOutBoundFlight());
+
 
     }
     public void changeUser(MenuItem item){
