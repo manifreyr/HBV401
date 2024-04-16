@@ -82,5 +82,8 @@ public class forsidaController {
         fxFrom.setPromptText("Outbound destination");
         fxTo.setPromptText("Arrival destination");
     }
+    public void clearSSN(){
+        fxSSN.setText("");
+    }
 
 }

@@ -29,6 +29,7 @@ public class BookingSearchController {
 
     public void pastScene(ActionEvent event){
         ViewSwitcher.switchTo(View.OPNA);
+        fController.clearSSN();
     }
     public void delete(ActionEvent event) throws SQLException {
         flightRepository.increaseAvailableSeats(flightController.getFlightByNumber(fxBookings.getSelectionModel().getSelectedItem().getFlightID()));
