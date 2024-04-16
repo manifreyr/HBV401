@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.FlightListController">
+<AnchorPane maxHeight="-Infinity" stylesheets="@../css/styles.css" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="435.0" prefWidth="403.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.FlightListController">
    <children>
       <ListView fx:id="fxFlights" layoutX="31.0" layoutY="85.0" prefHeight="266.0" prefWidth="327.0" />
       <Label layoutX="66.0" layoutY="37.0" prefHeight="37.0" prefWidth="158.0" text="Select outbound flight">

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.passengerController">
+<AnchorPane maxHeight="-Infinity" stylesheets="@../css/styles.css" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="476.0" prefWidth="390.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.passengerController">
    <children>
       <Button layoutX="292.0" layoutY="420.0" mnemonicParsing="false" onAction="#saveUserInfo" text="Next" />
       <Button layoutX="78.0" layoutY="420.0" mnemonicParsing="false" onAction="#pastScene" text="Back" />
