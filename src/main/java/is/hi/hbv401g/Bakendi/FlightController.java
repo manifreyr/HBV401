@@ -78,6 +78,11 @@ public class FlightController {
         return flights;
     }
 
+    public List<Flight> sortFlightsByPriceHi(List<Flight> flights) {
+        flights.sort(Comparator.comparingInt(Flight::getPrice));
+        return flights.reversed();
+    }
+
     public void sortFlightsByDate(List<Flight> flights) {
         flights.sort(Comparator.comparing(Flight::getDay));
     }

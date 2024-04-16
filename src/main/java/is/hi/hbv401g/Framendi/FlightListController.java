@@ -47,7 +47,7 @@ public class FlightListController {
     public void sortHighLow(ActionEvent event){
         fxSort.setText("Price: High to low");
         ObservableList<Flight> currentFlights = fxFlights.getItems();
-        ObservableList<Flight> sortedFlights = FXCollections.observableArrayList(flightController.sortFlightsByPrice(currentFlights));
+        ObservableList<Flight> sortedFlights = FXCollections.observableArrayList(flightController.sortFlightsByPriceHi(currentFlights));
         fxFlights.setItems(sortedFlights);
     }
 
