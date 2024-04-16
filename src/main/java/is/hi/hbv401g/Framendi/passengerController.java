@@ -18,6 +18,8 @@ public class passengerController {
     @FXML
     private TextField fxPhone;
     @FXML
+    private Label fxPassengerNumber;
+    @FXML
     private TextField fxSSN;
     private List<User> addedUsers = new ArrayList<>();
     private forsidaController fController;
@@ -27,7 +29,7 @@ public class passengerController {
 
     public void initialize(){
         fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
-        passengerCounter = 0;
+        passengerCounter = 1;
     }
 
     @FXML
@@ -50,6 +52,7 @@ public class passengerController {
         addedUsers.add(new User(fxSSN.getText(), fxPhone.getText(), fxFirstName.getText(), fxLastName.getText()));
         reset();
         passengerCounter++;
+        fxPassengerNumber.setText(String.valueOf(passengerCounter));
     }
     public List<User> getAddedUsers(){
         return addedUsers;

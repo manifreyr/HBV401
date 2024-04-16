@@ -31,7 +31,7 @@
             <MenuButton fx:id="fxPassengerSelection" layoutX="181.0" layoutY="1.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="28.0" text="1" />
             </children>
         </Pane>
-        <Pane layoutX="19.0" layoutY="187.0" prefHeight="107.0" prefWidth="321.0" style="-fx-background-color: lightblue;">
+        <Pane layoutX="19.0" layoutY="187.0" prefHeight="107.0" prefWidth="321.0" >
             <children>
                 <Text layoutX="136.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight" wrappingWidth="49.0">
                <font>

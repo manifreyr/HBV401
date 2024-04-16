@@ -28,7 +28,7 @@
             <MenuButton fx:id="fxPassengerSelection" layoutX="160.0" layoutY="1.0" mnemonicParsing="false" text="1" />
          </children>
       </Pane>
-      <Pane layoutX="19.0" layoutY="135.0" prefHeight="107.0" prefWidth="321.0" style="-fx-background-color: lightblue;">
+      <Pane layoutX="19.0" layoutY="135.0" prefHeight="107.0" prefWidth="321.0" >
          <children>
             <Text layoutX="118.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Outbound flight" />
             <Text layoutX="3.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight number:" />
@@ -45,7 +45,7 @@
             <Label fx:id="fxOutBoundDate" layoutX="33.0" layoutY="82.0" prefHeight="17.0" prefWidth="95.0" text="Label" />
          </children>
       </Pane>
-      <Pane layoutX="19.0" layoutY="248.0" prefHeight="107.0" prefWidth="321.0" style="-fx-background-color: lightblue;">
+      <Pane layoutX="19.0" layoutY="248.0" prefHeight="107.0" prefWidth="321.0" >
          <children>
             <Text layoutX="118.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Return flight" />
             <Text layoutX="3.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Flight number:" />
