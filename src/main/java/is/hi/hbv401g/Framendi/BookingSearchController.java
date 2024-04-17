@@ -18,11 +18,11 @@ public class BookingSearchController {
     private final BookingRepository bookingRepository = new BookingRepository();
     private final FlightRepository flightRepository = new FlightRepository();
     private FlightController flightController = new FlightController();
-    private forsidaController fController;
+    private ForsidaController fController;
     private ObservableList<Booking> bookings;
 
     public void initialize(){
-        fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
+        fController = (ForsidaController) ViewSwitcher.lookup(View.OPNA);
         bookings = FXCollections.observableArrayList(fController.getSearchedBookings());
         fxBookings.setItems(bookings);
     }

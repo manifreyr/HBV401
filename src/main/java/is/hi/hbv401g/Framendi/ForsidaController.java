@@ -11,7 +11,7 @@ import javafx.scene.input.MouseEvent;
 import java.sql.SQLException;
 import java.util.List;
 
-public class forsidaController {
+public class ForsidaController {
 
     @FXML
     private DatePicker fxArrivalDate;

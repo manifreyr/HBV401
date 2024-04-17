@@ -11,9 +11,8 @@ public class FlightView extends VBox {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("FlightView.fxml"));
             fxmlLoader.setRoot(this);
             fxmlLoader.setController(this);
-            fxmlLoader.load(); // Don't forget to call load()
+            fxmlLoader.load();
         } catch (IOException e) {
-            // Handle exceptions
             e.printStackTrace();
         }
     }

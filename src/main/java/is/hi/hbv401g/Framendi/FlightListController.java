@@ -12,7 +12,7 @@ import javafx.scene.control.MenuButton;
 import java.sql.SQLException;
 
 public class FlightListController {
-    private forsidaController fController;
+    private ForsidaController fController;
     @FXML
     private ListView<Flight> fxFlights;
     @FXML
@@ -20,7 +20,7 @@ public class FlightListController {
     private final FlightController flightController = new FlightController();
     private Flight selectedOutBoundFlight;
     public void initialize() throws SQLException {
-        fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
+        fController = (ForsidaController) ViewSwitcher.lookup(View.OPNA);
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getOutBoundConnect()));
         fxFlights.setItems(flightObservableList);
         fxFlights.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -53,7 +53,7 @@ public class FlightListController {
 
     public void sortDefault(ActionEvent event) throws SQLException {
         fxSort.setText("Sort by");
-        fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
+        fController = (ForsidaController) ViewSwitcher.lookup(View.OPNA);
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getOutBoundConnect()));
         fxFlights.setItems(flightObservableList);
     }

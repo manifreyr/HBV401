@@ -46,10 +46,10 @@ public class FinalReturnController {
     @FXML
     private MenuButton fxPassengerSelection;
 
-    private passengerController pController;
+    private PassengerController pController;
     private FlightListController fController;
     private ReturnController rController;
-    private forsidaController forsidaController;
+    private ForsidaController forsidaController;
     private UserRepository userRepository = new UserRepository();
     private FlightRepository flightRepository = new FlightRepository();
     private BookingController bookingController = new BookingController();
@@ -58,8 +58,8 @@ public class FinalReturnController {
     private List<User> users;
 
     public void initialize(){
-        forsidaController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
-        pController = (passengerController) ViewSwitcher.lookup(View.DETAIL);
+        forsidaController = (ForsidaController) ViewSwitcher.lookup(View.OPNA);
+        pController = (PassengerController) ViewSwitcher.lookup(View.DETAIL);
         fController = (FlightListController) ViewSwitcher.lookup(View.FLIGHT);
         rController = (ReturnController) ViewSwitcher.lookup(View.RETURN);
         users = pController.getAddedUsers();

@@ -10,10 +10,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.MenuButton;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class ReturnController {
-    private forsidaController fController;
+    private ForsidaController fController;
     @FXML
     private ListView<Flight> fxFlights;
     @FXML
@@ -28,7 +27,7 @@ public class ReturnController {
         ViewSwitcher.switchTo(View.FLIGHT);
     }
     public void initialize() throws SQLException {
-        fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
+        fController = (ForsidaController) ViewSwitcher.lookup(View.OPNA);
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getReturnConnect()));
         fxFlights.setItems(flightObservableList);
         fxFlights.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
@@ -50,7 +49,7 @@ public class ReturnController {
 
     public void sortDefault(ActionEvent event) throws SQLException {
         fxSort.setText("Sort by");
-        fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
+        fController = (ForsidaController) ViewSwitcher.lookup(View.OPNA);
         ObservableList<Flight> flightObservableList = FXCollections.observableArrayList(flightController.returnAvailableFlights(fController.getReturnConnect()));
         fxFlights.setItems(flightObservableList);
     }

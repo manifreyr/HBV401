@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="483.0" prefWidth="344.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.forsidaController">
+<AnchorPane prefHeight="483.0" prefWidth="344.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.hbv401g.Framendi.ForsidaController">
     <Button fx:id="aframButton" layoutX="96.0" layoutY="353.0" onAction="#nextScene" text="Search for flights" AnchorPane.bottomAnchor="104.66666666666669" AnchorPane.rightAnchor="142.0" />
    <Text layoutX="121.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Trip details" textAlignment="CENTER" wrappingWidth="103.125">
       <font>

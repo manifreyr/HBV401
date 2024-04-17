@@ -5,11 +5,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class passengerController {
+public class PassengerController {
 
     @FXML
     private TextField fxFirstName;
@@ -22,13 +21,13 @@ public class passengerController {
     @FXML
     private TextField fxSSN;
     private List<User> addedUsers = new ArrayList<>();
-    private forsidaController fController;
+    private ForsidaController fController;
 
     private final UserRepository userRepository= new UserRepository();
     private int passengerCounter;
 
     public void initialize(){
-        fController = (forsidaController) ViewSwitcher.lookup(View.OPNA);
+        fController = (ForsidaController) ViewSwitcher.lookup(View.OPNA);
         passengerCounter = 1;
     }
 
