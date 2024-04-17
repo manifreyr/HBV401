@@ -102,6 +102,7 @@ public class FinalReturnController {
                 userRepository.addUser(user);
             }
             flightRepository.decreaseAvailableSeats(fController.getSelectedOutBoundFlight());
+            flightRepository.decreaseAvailableSeats(rController.getSelectedReturnFlight());
             bookingController.createBooking(fController.getSelectedOutBoundFlight(), user);
         }
     dialog();
