@@ -25,6 +25,7 @@ public class forsidaController {
     private ComboBox<String> fxTo;
     @FXML
     private TextField fxSSN;
+
     @FXML
     private Button fxBookingSearch;
     private final FlightController flightController = new FlightController();

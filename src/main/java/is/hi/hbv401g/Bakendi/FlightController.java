@@ -3,6 +3,7 @@ package is.hi.hbv401g.Bakendi;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -80,7 +81,8 @@ public class FlightController {
 
     public List<Flight> sortFlightsByPriceHi(List<Flight> flights) {
         flights.sort(Comparator.comparingInt(Flight::getPrice));
-        return flights.reversed();
+        Collections.reverse(flights);
+        return flights;
     }
 
     public void sortFlightsByDate(List<Flight> flights) {

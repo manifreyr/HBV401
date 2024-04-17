@@ -84,7 +84,6 @@ public class FinalOneWayController {
         alert.setTitle("Booking Confirmation");
         alert.setHeaderText(null);  // No header text
         alert.setContentText(dialogText());
-        alert.setOnHidden(evt -> frontPage());
         alert.showAndWait();
     }
     public String dialogText() {

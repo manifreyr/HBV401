@@ -22,7 +22,6 @@
         <items>
           <MenuItem mnemonicParsing="false" onAction="#sortLowHigh" text="Price: Low to high" />
           <MenuItem mnemonicParsing="false" onAction="#sortHighLow" text="Price: High to low" />
-            <MenuItem mnemonicParsing="false" onAction="#sortDefault" text="Default" />
             <MenuItem mnemonicParsing="false" onAction="#sortDeparture" text="Departure time" />
         </items>
       </MenuButton>
