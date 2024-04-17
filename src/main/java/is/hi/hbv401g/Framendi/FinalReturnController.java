@@ -98,8 +98,11 @@ public class FinalReturnController {
     }
     public void confirm(ActionEvent event){
         for(User user : users){
-            userRepository.addUser(user);
+            if(!userRepository.ifUserExists(user.getUserID())){
+                userRepository.addUser(user);
+            }
             flightRepository.decreaseAvailableSeats(fController.getSelectedOutBoundFlight());
+            flightRepository.decreaseAvailableSeats(rController.getSelectedReturnFlight());
             bookingController.createBooking(fController.getSelectedOutBoundFlight(), user);
         }
     dialog();
@@ -114,8 +117,9 @@ public class FinalReturnController {
         alert.setTitle("Booking Confirmation");
         alert.setHeaderText(null);  // No header text
         alert.setContentText(dialogText());
-
         alert.showAndWait();
+        System.exit(0);
+
     }
     public String dialogText() {
         StringBuilder message = new StringBuilder();
