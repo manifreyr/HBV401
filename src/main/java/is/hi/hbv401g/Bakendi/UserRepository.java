@@ -51,6 +51,7 @@ public class UserRepository {
         return user;
     }
 
+
     public void addUser(User user) {
         String sql = "INSERT INTO User (SSNo, phone, firstName, lastName) VALUES (?, ?, ?, ?)";
         try (Connection connection = DatabaseConnector.connect();

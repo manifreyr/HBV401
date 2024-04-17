@@ -114,8 +114,8 @@ public class FinalReturnController {
         alert.setTitle("Booking Confirmation");
         alert.setHeaderText(null);  // No header text
         alert.setContentText(dialogText());
-
         alert.showAndWait();
+        System.exit(0);
     }
     public String dialogText() {
         StringBuilder message = new StringBuilder();
