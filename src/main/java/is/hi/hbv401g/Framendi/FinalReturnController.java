@@ -119,6 +119,7 @@ public class FinalReturnController {
         alert.setContentText(dialogText());
         alert.showAndWait();
         System.exit(0);
+
     }
     public String dialogText() {
         StringBuilder message = new StringBuilder();
