@@ -50,6 +50,20 @@ public class UserRepository {
         }
         return user;
     }
+    public Boolean ifUserExists(String SSNo) {
+        String sql = "SELECT * FROM User WHERE SSNo = ?";
+        try (Connection connection = DatabaseConnector.connect();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, SSNo);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
+    }
 
     public void addUser(User user) {
         String sql = "INSERT INTO User (SSNo, phone, firstName, lastName) VALUES (?, ?, ?, ?)";
